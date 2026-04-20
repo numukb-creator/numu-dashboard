@@ -1,0 +1,778 @@
+{
+  "meta": {
+    "system": "Numu Engine",
+    "version": "1.0.0",
+    "created": "2026-03-04",
+    "owner": "Hasan Sarwar",
+    "company": "Numu Consulting",
+    "description": "Complete agent registry for the Numu Engine AI-Powered Ethical Growth Intelligence System",
+    "total_agents": 15,
+    "ethics_framework": "Sidq + Amanah + Adl + Grandfather Principle"
+  },
+  "agents": [
+    {
+      "id": "AGENT_01",
+      "name": "THE SCOUT",
+      "role": "Lead Research & Enrichment",
+      "mission": "Identify, research, and enrich qualified leads in the SME, charity, and professional services space. Deliver fully enriched lead profiles to THE SCRIBE and THE CLOSER with at least 80% data completeness before any outreach begins. Never surface a lead that has not passed the Ethics Gate.",
+      "status": "active",
+      "phase": 1,
+      "activation_month": 1,
+      "tools": [
+        "Clay",
+        "LinkedIn Sales Navigator",
+        "Apollo.io",
+        "Companies House",
+        "Charity Commission",
+        "HubSpot CRM",
+        "Hunter.io",
+        "Google Search"
+      ],
+      "kpis": [
+        "10-15 qualified leads per day",
+        "80%+ enrichment accuracy",
+        "Less than 24hr enrichment turnaround",
+        "100% Ethics Gate pass rate before handoff",
+        "0 leads in prohibited sectors"
+      ],
+      "inbound_from": [],
+      "outbound_to": ["AGENT_02", "AGENT_08"],
+      "data_outputs": {
+        "to_AGENT_02": "Enriched lead profile (name, company, sector, size, turnover estimate, digital presence score, pain indicators, LinkedIn URL, email, phone, Companies House number, charity number if applicable, Ethics Gate verdict)",
+        "to_AGENT_08": "Raw lead data for CRM entry and pipeline tracking"
+      },
+      "ethics_gate_required": true,
+      "ethics_gate_checkpoints": ["Pre-enrichment sector screen", "Post-enrichment full Ethics Gate evaluation"],
+      "escalation_triggers": [
+        "Lead operates in sensitive or dual-use sector",
+        "Unclear ethical alignment with Islamic principles",
+        "Lead has prior controversy or reputational flags",
+        "Charity lead with governance concerns on Charity Commission record",
+        "Lead in alcohol, gambling, adult, tobacco, arms, or interest-based finance"
+      ],
+      "prohibited_sectors": [
+        "Alcohol production or retail",
+        "Gambling or betting",
+        "Adult entertainment",
+        "Tobacco",
+        "Arms and defence",
+        "Riba-based financial products",
+        "Predatory lending"
+      ],
+      "preferred_sectors": [
+        "Islamic finance and fintech",
+        "Halal food and consumer goods",
+        "Muslim charities and NGOs",
+        "Professional services (law, accountancy, consultancy)",
+        "Healthcare and wellness",
+        "Education and EdTech",
+        "Ethical e-commerce",
+        "SME manufacturing and services",
+        "Community organisations"
+      ],
+      "playbook_path": "/numu-agents/AGENT_01_THE_SCOUT.md",
+      "system_prompt_path": "/numu-agents/prompts/SCOUT_PROMPT.md",
+      "daily_output_target": "10-15 enriched profiles",
+      "integration_notes": "Clay is primary enrichment tool. LinkedIn Sales Navigator for prospect identification. Companies House and Charity Commission for entity verification and governance review. All output formatted as JSON lead card before handoff."
+    },
+    {
+      "id": "AGENT_02",
+      "name": "THE SCRIBE",
+      "role": "Outreach Copywriter & Sequence Builder",
+      "mission": "Craft highly personalised, honest, non-manipulative outreach sequences for each enriched lead. Every message must reflect Sidq (truthfulness) — no false urgency, no manufactured scarcity, no dark patterns. Write as Hasan would write: warm, direct, and rooted in genuine value.",
+      "status": "active",
+      "phase": 1,
+      "activation_month": 1,
+      "tools": [
+        "Instantly.ai",
+        "HubSpot",
+        "Claude / GPT-4",
+        "Notion",
+        "Grammarly"
+      ],
+      "kpis": [
+        "30%+ open rate on cold email",
+        "8%+ reply rate on cold email",
+        "100% Ethics Gate pass on all outreach before send",
+        "Zero manipulative or misleading claims",
+        "Personalisation score 7/10+ on every sequence"
+      ],
+      "inbound_from": ["AGENT_01", "AGENT_08"],
+      "outbound_to": ["AGENT_03", "AGENT_08"],
+      "data_outputs": {
+        "to_AGENT_03": "Drafted outreach sequences (email + LinkedIn) with metadata: lead ID, personalisation notes, tone flags, compliance notes",
+        "to_AGENT_08": "Sequence tracking data for CRM logging"
+      },
+      "ethics_gate_required": true,
+      "ethics_gate_checkpoints": ["Pre-send Ethics Gate review of every message for truthfulness and non-manipulation"],
+      "escalation_triggers": [
+        "Sequence contains any claim that cannot be verified",
+        "Request to include urgency or scarcity that is manufactured",
+        "Request to target a lead flagged as ethics risk by AGENT_01",
+        "Content contradicts Islamic marketing ethics"
+      ],
+      "output_formats": [
+        "5-step email sequence (JSON + plain text)",
+        "3-step LinkedIn DM sequence (JSON + plain text)",
+        "Subject line variants (A/B tested, 3 options)",
+        "Follow-up cadence schedule"
+      ],
+      "playbook_path": "/numu-agents/AGENT_02_THE_SCRIBE.md",
+      "system_prompt_path": "/numu-agents/prompts/SCRIBE_PROMPT.md",
+      "integration_notes": "All outreach must be approved by Hasan before Instantly.ai activation. No automated sending without human sign-off. Ethics Gate must return APPROVED before any draft leaves AGENT_02."
+    },
+    {
+      "id": "AGENT_03",
+      "name": "THE CLOSER",
+      "role": "Sales Strategy & Conversion",
+      "mission": "Convert qualified, warmed prospects into audit bookings and paid engagements. Manage the full sales cycle from first reply to signed agreement. Deploy The Ladder: Free → Audit → Sprint → Retainer. Never push; position value and let the prospect self-select. Retainers are earned, not sold.",
+      "status": "active",
+      "phase": 1,
+      "activation_month": 1,
+      "tools": [
+        "HubSpot CRM",
+        "Calendly",
+        "DocuSign / PandaDoc",
+        "Stripe",
+        "Claude / GPT-4",
+        "Notion"
+      ],
+      "kpis": [
+        "30%+ audit conversion rate from warm discovery call",
+        "20%+ Sprint conversion from Audit clients",
+        "40%+ retainer conversion from Sprint clients",
+        "Less than 72hr proposal turnaround",
+        "Pipeline value tracked weekly"
+      ],
+      "inbound_from": ["AGENT_02", "AGENT_08"],
+      "outbound_to": ["AGENT_04", "AGENT_07", "AGENT_08"],
+      "data_outputs": {
+        "to_AGENT_04": "Confirmed audit booking with briefing pack (company details, service tier, known pain points, discovery call notes)",
+        "to_AGENT_07": "Upsell opportunity flags (clients ready for Sprint or Retainer elevation)",
+        "to_AGENT_08": "Deal status updates, pipeline stage changes, revenue logged"
+      },
+      "ethics_gate_required": true,
+      "ethics_gate_checkpoints": ["Ethics Gate review before any proposal is issued", "Grandfather Principle check on existing client pricing"],
+      "escalation_triggers": [
+        "Prospect requests service that conflicts with ethics framework",
+        "Pricing pressure leading to potential under-delivery",
+        "Prospect operating in sensitive sector passed by AGENT_01 in error",
+        "Contract terms that compromise Amanah"
+      ],
+      "service_tiers": {
+        "audit_starter": {"price": 497, "currency": "GBP", "name": "Starter Audit"},
+        "audit_growth": {"price": 897, "currency": "GBP", "name": "Growth Audit"},
+        "audit_scale": {"price": 1497, "currency": "GBP", "name": "Scale Audit"},
+        "sprint": {"price": 1200, "currency": "GBP", "name": "90-Day Sprint"},
+        "retainer_base": {"price_min": 700, "price_max": 5000, "currency": "GBP", "name": "Monthly Retainer"},
+        "founders_circle": {"price": 2200, "currency": "GBP", "name": "Founder's Circle"}
+      },
+      "playbook_path": "/numu-agents/AGENT_03_THE_CLOSER.md",
+      "system_prompt_path": "/numu-agents/prompts/CLOSER_PROMPT.md",
+      "principle": "Retainers Are Earned, Not Sold — client must experience value before a retainer is proposed"
+    },
+    {
+      "id": "AGENT_04",
+      "name": "THE AUDITOR",
+      "role": "Growth Audit Delivery",
+      "mission": "Conduct deep-dive Growth Intelligence Audits for paid clients. Produce audit reports that are genuinely transformational — not templated summaries, but bespoke strategic intelligence. Every audit must surface at least 3 high-impact, immediately actionable opportunities. Amanah demands we deliver more than what was promised.",
+      "status": "active",
+      "phase": 1,
+      "activation_month": 1,
+      "tools": [
+        "Screaming Frog",
+        "Ahrefs / SEMrush",
+        "Google Analytics 4",
+        "Meta Business Suite",
+        "LinkedIn Analytics",
+        "Google Search Console",
+        "HubSpot",
+        "Notion",
+        "Claude / GPT-4",
+        "Canva / Figma"
+      ],
+      "kpis": [
+        "100% on-time audit delivery (within agreed SLA)",
+        "Net Promoter Score 8+/10 from audit clients",
+        "3+ high-impact opportunities identified per audit",
+        "Report quality score 9/10+ (Hasan review)",
+        "90%+ upsell conversation initiated post-audit"
+      ],
+      "inbound_from": ["AGENT_03"],
+      "outbound_to": ["AGENT_05", "AGENT_07", "AGENT_08"],
+      "data_outputs": {
+        "to_AGENT_05": "Audit findings with content gaps, keyword opportunities, messaging recommendations",
+        "to_AGENT_07": "Full audit report + upsell readiness assessment",
+        "to_AGENT_08": "Delivery confirmation, client feedback, satisfaction score"
+      },
+      "ethics_gate_required": true,
+      "ethics_gate_checkpoints": ["Pre-report Ethics Gate: verify all recommendations are achievable and honest", "Adl check: ensure report is fair and does not overpromise outcomes"],
+      "escalation_triggers": [
+        "Audit reveals client has serious operational or ethical issues",
+        "Data analysis cannot support confident recommendations",
+        "Client's sector alignment is questionable post-discovery",
+        "Report contains projections that may mislead"
+      ],
+      "audit_tiers": {
+        "starter": {
+          "deliverables": ["Digital presence review", "Top 3 quick wins", "Basic competitor scan", "PDF report (15-25 pages)"],
+          "turnaround": "5 business days"
+        },
+        "growth": {
+          "deliverables": ["Full digital audit", "SEO & content gap analysis", "Funnel mapping", "5 strategic recommendations", "60-min delivery call", "PDF report (25-40 pages)"],
+          "turnaround": "7 business days"
+        },
+        "scale": {
+          "deliverables": ["Full growth intelligence audit", "Competitor intelligence", "Market opportunity mapping", "10 prioritised recommendations", "90-min strategy call", "PDF + slide deck", "30-day quick win roadmap"],
+          "turnaround": "10 business days"
+        }
+      },
+      "playbook_path": "/numu-agents/AGENT_04_THE_AUDITOR.md",
+      "system_prompt_path": "/numu-agents/prompts/AUDITOR_PROMPT.md"
+    },
+    {
+      "id": "AGENT_05",
+      "name": "THE STORYTELLER",
+      "role": "Content Strategy & Creation",
+      "mission": "Build and execute Numu's content engine across LinkedIn, email newsletter, and thought leadership. Position Hasan as the UK's leading Islamic AI-Powered Growth Consultant. All content must be rooted in truth, add genuine value, and never chase virality at the expense of integrity. Educate first, sell never (the sale is a natural byproduct).",
+      "status": "active",
+      "phase": 1,
+      "activation_month": 1,
+      "tools": [
+        "Claude / GPT-4",
+        "Notion",
+        "Buffer / Hootsuite",
+        "Canva",
+        "Beehiiv / ConvertKit",
+        "LinkedIn",
+        "Grammarly"
+      ],
+      "kpis": [
+        "4+ LinkedIn posts per week",
+        "1 newsletter per week",
+        "LinkedIn follower growth 10%+ per month",
+        "Email open rate 35%+",
+        "Email click rate 5%+",
+        "2+ inbound leads per week from content",
+        "0 posts that violate Ethics Gate"
+      ],
+      "inbound_from": ["AGENT_04", "AGENT_06", "AGENT_09"],
+      "outbound_to": ["AGENT_06", "AGENT_08"],
+      "data_outputs": {
+        "to_AGENT_06": "Content calendar, published pieces, performance data for amplification and distribution",
+        "to_AGENT_08": "Content performance metrics, lead attribution from content"
+      },
+      "ethics_gate_required": true,
+      "ethics_gate_checkpoints": ["Pre-publish Ethics Gate: all content reviewed for Sidq before scheduling"],
+      "escalation_triggers": [
+        "Content request involves potentially misleading claims",
+        "Topic area is politically or religiously sensitive",
+        "Content would amplify unverified statistics or case studies",
+        "Pressure to produce clickbait or sensationalist content"
+      ],
+      "content_pillars": [
+        "Islamic business ethics in practice",
+        "AI tools for SME growth",
+        "Digital marketing demystified",
+        "Case studies and proof points (anonymised where needed)",
+        "Founder journey and behind-the-scenes",
+        "Industry insights and commentary"
+      ],
+      "playbook_path": "/numu-agents/AGENT_05_THE_STORYTELLER.md",
+      "system_prompt_path": "/numu-agents/prompts/STORYTELLER_PROMPT.md"
+    },
+    {
+      "id": "AGENT_06",
+      "name": "THE AMPLIFIER",
+      "role": "Paid Campaigns & Distribution",
+      "mission": "Manage and optimise paid advertising campaigns (LinkedIn Ads, Meta Ads) and organic distribution to maximise reach of Numu content and client campaigns. Every pound spent must be justified by clear ROI. No vanity metrics. Adl demands honest reporting — show what is working and what is not.",
+      "status": "active",
+      "phase": 1,
+      "activation_month": 2,
+      "tools": [
+        "LinkedIn Campaign Manager",
+        "Meta Ads Manager",
+        "Google Ads",
+        "Hotjar",
+        "Google Analytics 4",
+        "HubSpot",
+        "Canva",
+        "Buffer"
+      ],
+      "kpis": [
+        "Cost per lead below £25 (LinkedIn)",
+        "Cost per lead below £15 (Meta)",
+        "ROAS 3x+ on client campaigns",
+        "CTR above platform benchmarks",
+        "Weekly campaign performance reports to Hasan",
+        "Zero misleading ad creative approved"
+      ],
+      "inbound_from": ["AGENT_05", "AGENT_09"],
+      "outbound_to": ["AGENT_05", "AGENT_08", "AGENT_09"],
+      "data_outputs": {
+        "to_AGENT_05": "Performance data to inform organic content strategy",
+        "to_AGENT_08": "Campaign spend, ROAS, lead volume, attribution data",
+        "to_AGENT_09": "Performance trends for reporting to Hasan"
+      },
+      "ethics_gate_required": true,
+      "ethics_gate_checkpoints": ["Pre-launch Ethics Gate on all ad creative and copy", "Adl check on all reported metrics — no vanity metrics presented as success"],
+      "escalation_triggers": [
+        "Ad creative flagged as potentially misleading",
+        "Platform algorithm pushes unethical targeting options",
+        "Client campaign results below expectations — honest reporting required",
+        "Budget overspend risk"
+      ],
+      "playbook_path": "/numu-agents/AGENT_06_THE_AMPLIFIER.md",
+      "system_prompt_path": "/numu-agents/prompts/AMPLIFIER_PROMPT.md"
+    },
+    {
+      "id": "AGENT_07",
+      "name": "THE ADVISOR",
+      "role": "Client Success & Upsell Strategy",
+      "mission": "Manage ongoing client relationships, ensure exceptional delivery experience, and identify genuine upsell opportunities when the client is ready — not before. The Ladder is climbed when the client has experienced value at each rung. Never push a retainer before a Sprint. Never push a Sprint before an Audit has delivered.",
+      "status": "active",
+      "phase": 1,
+      "activation_month": 1,
+      "tools": [
+        "HubSpot CRM",
+        "Notion",
+        "Calendly",
+        "DocuSign / PandaDoc",
+        "Stripe",
+        "Claude / GPT-4",
+        "Loom"
+      ],
+      "kpis": [
+        "Client satisfaction score 9+/10",
+        "Churn rate below 5% per month",
+        "Upsell conversion rate 40%+ (Audit → Sprint)",
+        "Retainer conversion rate 40%+ (Sprint → Retainer)",
+        "NPS score 8+ across all clients",
+        "Zero clients who feel pressured into purchase"
+      ],
+      "inbound_from": ["AGENT_03", "AGENT_04"],
+      "outbound_to": ["AGENT_03", "AGENT_08", "AGENT_09"],
+      "data_outputs": {
+        "to_AGENT_03": "Upsell-ready client flag with context for AGENT_03 to initiate next-tier conversation",
+        "to_AGENT_08": "Client health scores, satisfaction data, renewal status",
+        "to_AGENT_09": "Client portfolio summary for monthly reporting"
+      },
+      "ethics_gate_required": true,
+      "ethics_gate_checkpoints": ["Grandfather Principle check: existing client pricing must be honoured and never retroactively increased", "Amanah check: upsell only when genuine value has been demonstrated"],
+      "escalation_triggers": [
+        "Client expressing dissatisfaction — immediate escalation to Hasan",
+        "Request to offer discount that undermines value positioning",
+        "Retainer client at churn risk",
+        "Upsell opportunity involves service Numu cannot currently deliver at required quality"
+      ],
+      "grandfather_principle": "Any client who joined at a given price tier will never face a retroactive price increase for the same service scope. New pricing only applies to new engagements or expanded scope.",
+      "playbook_path": "/numu-agents/AGENT_07_THE_ADVISOR.md",
+      "system_prompt_path": "/numu-agents/prompts/ADVISOR_PROMPT.md"
+    },
+    {
+      "id": "AGENT_08",
+      "name": "THE KEEPER",
+      "role": "CRM, Data & Pipeline Management",
+      "mission": "Maintain the integrity of the CRM as the single source of truth for all lead, client, and revenue data. Every agent interaction is logged. Every deal stage is tracked. Every client touchpoint is recorded. Amanah demands accurate data — never inflate pipeline, never suppress negative metrics.",
+      "status": "standby",
+      "phase": 2,
+      "activation_month": 4,
+      "tools": [
+        "HubSpot CRM",
+        "Google Sheets",
+        "Zapier / Make",
+        "Notion",
+        "Stripe",
+        "PandaDoc"
+      ],
+      "kpis": [
+        "CRM data completeness 95%+",
+        "Pipeline accuracy within 10% of actual close rate",
+        "All deal stages updated within 24hrs of movement",
+        "Zero revenue logged without corresponding documentation",
+        "Weekly pipeline report delivered every Monday"
+      ],
+      "inbound_from": ["AGENT_01", "AGENT_02", "AGENT_03", "AGENT_04", "AGENT_05", "AGENT_06", "AGENT_07", "AGENT_09", "AGENT_10", "AGENT_11", "AGENT_12", "AGENT_13", "AGENT_14", "AGENT_15"],
+      "outbound_to": ["AGENT_02", "AGENT_03", "AGENT_09"],
+      "data_outputs": {
+        "to_AGENT_02": "Active lead contact data for sequence personalisation",
+        "to_AGENT_03": "Pipeline status, deal history, contact interaction log",
+        "to_AGENT_09": "Consolidated data exports for reporting and dashboard"
+      },
+      "ethics_gate_required": false,
+      "ethics_gate_checkpoints": [],
+      "escalation_triggers": [
+        "Data anomaly detected (pipeline figure doesn't match invoices)",
+        "CRM data integrity compromise detected",
+        "Duplicate client records identified",
+        "Revenue discrepancy above £500"
+      ],
+      "playbook_path": "/numu-agents/AGENT_08_THE_KEEPER.md",
+      "system_prompt_path": "/numu-agents/prompts/KEEPER_PROMPT.md",
+      "note": "Phase 2 activation (Month 4). In Phase 1, Hasan manages CRM manually with basic HubSpot setup."
+    },
+    {
+      "id": "AGENT_09",
+      "name": "THE ANALYST",
+      "role": "Performance Analytics & Reporting",
+      "mission": "Transform raw performance data into clear, honest intelligence for Hasan's decision-making. Weekly dashboards, monthly board packs, campaign post-mortems. Adl demands that reporting shows reality — wins and losses. Never spin poor results. Surface the truth, then surface the path forward.",
+      "status": "active",
+      "phase": 1,
+      "activation_month": 1,
+      "tools": [
+        "Google Looker Studio",
+        "Google Analytics 4",
+        "HubSpot Reporting",
+        "Meta Business Suite",
+        "LinkedIn Analytics",
+        "Google Sheets",
+        "Notion"
+      ],
+      "kpis": [
+        "Weekly dashboard delivered every Monday by 9am",
+        "Monthly board pack delivered by 3rd of each month",
+        "Data accuracy 99%+ (cross-referenced against source systems)",
+        "All KPIs tracked against targets",
+        "Actionable insight in every report (not just data dumps)"
+      ],
+      "inbound_from": ["AGENT_05", "AGENT_06", "AGENT_07", "AGENT_08"],
+      "outbound_to": ["AGENT_05", "AGENT_06", "AGENT_08"],
+      "data_outputs": {
+        "to_AGENT_05": "Content performance data to inform editorial strategy",
+        "to_AGENT_06": "Campaign performance benchmarks and optimisation recommendations",
+        "to_AGENT_08": "Consolidated analytics for CRM enrichment"
+      },
+      "ethics_gate_required": false,
+      "ethics_gate_checkpoints": ["Adl check: ensure all reported metrics are accurate and not selectively presented"],
+      "escalation_triggers": [
+        "KPI significantly off target (>20% below) — immediate flag to Hasan",
+        "Anomalous data that cannot be explained",
+        "Client campaign performing below contracted SLA"
+      ],
+      "report_cadence": {
+        "daily": "Lead volume and outreach metrics (Slack/Notion)",
+        "weekly": "Full pipeline and content performance dashboard (Monday)",
+        "monthly": "Board pack with P&L summary, KPI scorecard, growth trajectory (3rd of month)",
+        "quarterly": "Strategic review with phase progress and year targets"
+      },
+      "playbook_path": "/numu-agents/AGENT_09_THE_ANALYST.md",
+      "system_prompt_path": "/numu-agents/prompts/ANALYST_PROMPT.md"
+    },
+    {
+      "id": "AGENT_10",
+      "name": "THE ARCHITECT",
+      "role": "Marketing Automation & Tech Stack",
+      "mission": "Design, build, and maintain the marketing automation infrastructure that powers Numu's scale. Every automation must be auditable, reversible, and human-reviewable. Amanah demands that no automation acts in Hasan's name without his knowledge. The Architect builds the rails — Hasan drives the train.",
+      "status": "active",
+      "phase": 1,
+      "activation_month": 2,
+      "tools": [
+        "Make (Integromat)",
+        "Zapier",
+        "HubSpot Workflows",
+        "Instantly.ai",
+        "Beehiiv",
+        "Notion API",
+        "Webhooks",
+        "Airtable"
+      ],
+      "kpis": [
+        "Zero automation errors causing client-facing issues",
+        "All automations documented in Notion",
+        "100% of automations have manual override capability",
+        "System uptime 99.5%+",
+        "New automation deployed within 48hrs of approval"
+      ],
+      "inbound_from": ["AGENT_09"],
+      "outbound_to": ["AGENT_08"],
+      "data_outputs": {
+        "to_AGENT_08": "Automation logs and system event data for CRM"
+      },
+      "ethics_gate_required": false,
+      "ethics_gate_checkpoints": ["All new automations reviewed: does any automation send a message, create content, or take commercial action without human sign-off?"],
+      "escalation_triggers": [
+        "Automation failure with client-facing impact",
+        "Automation request that bypasses human review",
+        "Tech stack costs exceeding budget threshold",
+        "Data privacy concern in automation design"
+      ],
+      "golden_rule": "No automated system may represent Hasan, contact a client or prospect, or send any commercial communication without explicit prior approval",
+      "playbook_path": "/numu-agents/AGENT_10_THE_ARCHITECT.md",
+      "system_prompt_path": "/numu-agents/prompts/ARCHITECT_PROMPT.md"
+    },
+    {
+      "id": "AGENT_11",
+      "name": "THE STRATEGIST",
+      "role": "Campaign Strategy & Planning",
+      "mission": "Design full-funnel campaign strategies for Numu and its clients. Translate business objectives into campaign briefs, channel plans, and measurement frameworks. Strategy precedes execution — never brief AGENT_06 (The Amplifier) without a Strategist-approved plan. Campaigns must have clear ethical guardrails built in.",
+      "status": "standby",
+      "phase": 2,
+      "activation_month": 4,
+      "tools": [
+        "Notion",
+        "Claude / GPT-4",
+        "Miro / FigJam",
+        "Google Trends",
+        "SparkToro",
+        "SimilarWeb",
+        "HubSpot"
+      ],
+      "kpis": [
+        "Campaign brief delivered within 5 days of engagement start",
+        "100% of campaigns have defined success metrics before launch",
+        "Post-campaign debrief completed within 7 days of campaign end",
+        "Client approval on strategy before any spend committed"
+      ],
+      "inbound_from": ["AGENT_03", "AGENT_09"],
+      "outbound_to": ["AGENT_05", "AGENT_06"],
+      "data_outputs": {
+        "to_AGENT_05": "Content brief aligned to campaign narrative",
+        "to_AGENT_06": "Campaign brief with budget, channels, KPIs, audience targeting parameters, and ethical constraints"
+      },
+      "ethics_gate_required": true,
+      "ethics_gate_checkpoints": ["Pre-brief Ethics Gate: all campaign strategies reviewed for Sidq, Amanah, and Adl compliance"],
+      "escalation_triggers": [
+        "Campaign strategy requires targeting that could be considered manipulative",
+        "Client brief conflicts with Numu ethics framework",
+        "Campaign objective cannot be achieved with honest marketing practices"
+      ],
+      "playbook_path": "/numu-agents/AGENT_11_THE_STRATEGIST.md",
+      "system_prompt_path": "/numu-agents/prompts/STRATEGIST_PROMPT.md"
+    },
+    {
+      "id": "AGENT_12",
+      "name": "THE BUILDER",
+      "role": "Funnel & Landing Page Development",
+      "mission": "Build high-converting, honest landing pages, lead magnets, and sales funnels for Numu and clients. Design is in service of clarity — not manipulation. Every CTA must be truthful. Every testimonial must be real. Every claim must be verifiable. Build pages that earn trust, not ones that exploit it.",
+      "status": "standby",
+      "phase": 2,
+      "activation_month": 5,
+      "tools": [
+        "Webflow / Framer",
+        "Unbounce / Leadpages",
+        "Figma",
+        "Hotjar",
+        "Google Optimize",
+        "Stripe",
+        "Calendly embed",
+        "Beehiiv embed"
+      ],
+      "kpis": [
+        "Landing page conversion rate 5%+ (cold traffic)",
+        "Landing page conversion rate 15%+ (warm traffic)",
+        "Page load time under 3 seconds",
+        "All pages pass Ethics Gate before going live",
+        "Zero unverified claims or fake testimonials"
+      ],
+      "inbound_from": ["AGENT_11"],
+      "outbound_to": ["AGENT_06", "AGENT_08"],
+      "data_outputs": {
+        "to_AGENT_06": "Live page URLs for ad destination, conversion tracking codes",
+        "to_AGENT_08": "Lead capture form integration for CRM"
+      },
+      "ethics_gate_required": true,
+      "ethics_gate_checkpoints": ["Pre-launch Ethics Gate: all claims, testimonials, and CTAs reviewed for truthfulness"],
+      "escalation_triggers": [
+        "Design brief requests dark patterns (fake countdown timers, false scarcity)",
+        "Client testimonial cannot be verified",
+        "Page contains earnings claims without substantiation",
+        "A/B test variant involves deceptive design"
+      ],
+      "playbook_path": "/numu-agents/AGENT_12_THE_BUILDER.md",
+      "system_prompt_path": "/numu-agents/prompts/BUILDER_PROMPT.md"
+    },
+    {
+      "id": "AGENT_13",
+      "name": "THE GUARDIAN",
+      "role": "Ethics & Compliance Monitoring",
+      "mission": "Serve as the active conscience of the Numu Engine. THE GUARDIAN conducts ongoing Ethics Gate audits across all agent outputs, monitors for drift from Islamic ethics principles, and raises flags before anything reaches clients. When in doubt, GUARDIAN stops the workflow and escalates. Better to be slow and righteous than fast and wrong.",
+      "status": "standby",
+      "phase": 3,
+      "activation_month": 7,
+      "tools": [
+        "Notion (ethics audit log)",
+        "Claude / GPT-4 (ethics reasoning)",
+        "Google Sheets (compliance tracker)",
+        "HubSpot (client communication audit)",
+        "Loom (training documentation)"
+      ],
+      "kpis": [
+        "100% of flagged Ethics Gate items reviewed within 4hrs",
+        "Zero client-facing content released with ethics violation",
+        "Monthly ethics audit report delivered to Hasan",
+        "All agent prompts reviewed quarterly for ethics drift",
+        "Ethics training updated after every new scenario encountered"
+      ],
+      "inbound_from": ["AGENT_01", "AGENT_02", "AGENT_03", "AGENT_04", "AGENT_05", "AGENT_06", "AGENT_07", "AGENT_11", "AGENT_12"],
+      "outbound_to": ["AGENT_01", "AGENT_02", "AGENT_03", "AGENT_04", "AGENT_05", "AGENT_06", "AGENT_07", "AGENT_11", "AGENT_12"],
+      "data_outputs": {
+        "to_all_agents": "Ethics Gate verdict (APPROVED / FLAGGED / REJECTED) with specific reasoning and remediation guidance"
+      },
+      "ethics_gate_required": false,
+      "ethics_gate_checkpoints": ["THE GUARDIAN IS the Ethics Gate — self-audits quarterly against Quran and Sunnah principles"],
+      "escalation_triggers": [
+        "Any systemic pattern of ethics drift detected across multiple agents",
+        "Ethics violation that has already reached a client",
+        "Agent producing outputs that contradict Islamic principles at scale",
+        "Hasan's explicit instructions conflict with ethics framework"
+      ],
+      "ethics_pillars": {
+        "sidq": {
+          "name": "Truthfulness",
+          "arabic": "صِدْق",
+          "definition": "Every claim, projection, case study, and testimonial must be verifiably true. No exaggeration, no spin, no selective omission that creates false impressions.",
+          "source": "Quran 9:119, Hadith - Sahih Bukhari 6094"
+        },
+        "amanah": {
+          "name": "Trustworthiness",
+          "arabic": "أَمَانَة",
+          "definition": "Numu acts as a trusted custodian of client data, money, and reputation. Deliver what is promised. Charge only what is earned. Never exploit information asymmetry.",
+          "source": "Quran 4:58, 8:27"
+        },
+        "adl": {
+          "name": "Justice",
+          "arabic": "عَدْل",
+          "definition": "Fair dealing with all parties — clients, prospects, competitors, and the public. Honest reporting of results. Fair pricing. No exploitation of vulnerability.",
+          "source": "Quran 4:135, 5:8"
+        },
+        "grandfather_principle": {
+          "name": "Grandfather Principle",
+          "definition": "Existing client pricing and commitments are locked for the duration of their engagement. Price increases only apply to new clients or new scope. Loyalty is rewarded, not punished.",
+          "source": "Numu Consulting founding principle — derived from Amanah"
+        }
+      },
+      "playbook_path": "/numu-agents/AGENT_13_THE_GUARDIAN.md",
+      "system_prompt_path": "/numu-agents/prompts/GUARDIAN_PROMPT.md"
+    },
+    {
+      "id": "AGENT_14",
+      "name": "THE NETWORKER",
+      "role": "Partnership & Community Development",
+      "mission": "Build Numu's network of strategic partners, referral sources, and community relationships. Target Islamic business networks, Muslim professional associations, accountancy firms, solicitors, and ethical business communities. Every partnership must be mutually beneficial and ethically aligned. Relationships are long-term assets, not short-term transactions.",
+      "status": "active",
+      "phase": 1,
+      "activation_month": 2,
+      "tools": [
+        "LinkedIn",
+        "LinkedIn Sales Navigator",
+        "HubSpot CRM",
+        "Eventbrite",
+        "Notion",
+        "Calendly",
+        "Claude / GPT-4"
+      ],
+      "kpis": [
+        "5+ new strategic partnerships per quarter",
+        "2+ referral leads per month from network by Month 6",
+        "Attend/present at 1+ Islamic business event per quarter",
+        "Partnership MOU or agreement signed for top-tier referrers",
+        "Network of 50+ qualified referral partners by end of Year 1"
+      ],
+      "inbound_from": [],
+      "outbound_to": ["AGENT_01", "AGENT_08"],
+      "data_outputs": {
+        "to_AGENT_01": "Referred leads from partners for enrichment and qualification",
+        "to_AGENT_08": "Partnership records, referral tracking, MOU storage"
+      },
+      "ethics_gate_required": true,
+      "ethics_gate_checkpoints": ["All partnership candidates evaluated for ethical alignment before approach"],
+      "escalation_triggers": [
+        "Partnership candidate operates in prohibited sector",
+        "Partnership terms create conflict of interest with existing clients",
+        "Referral arrangement risks compromising Sidq (e.g., incentivised to recommend unsuitable services)"
+      ],
+      "target_networks": [
+        "Muslim Business Network UK",
+        "Islamic Finance Council UK",
+        "British Muslim Heritage Centre",
+        "Local Muslim Chamber of Commerce groups",
+        "Islamic charity sector networks",
+        "Muslim professional LinkedIn groups",
+        "Accountancy firms with Muslim SME client bases",
+        "Shariah-compliant investment networks"
+      ],
+      "playbook_path": "/numu-agents/AGENT_14_THE_NETWORKER.md",
+      "system_prompt_path": "/numu-agents/prompts/NETWORKER_PROMPT.md"
+    },
+    {
+      "id": "AGENT_15",
+      "name": "THE FORECASTER",
+      "role": "Revenue Intelligence & Strategic Planning",
+      "mission": "Model Numu's revenue trajectory, scenario-plan for growth phases, and provide Hasan with the financial intelligence needed to make confident strategic decisions. All projections must be clearly labelled as projections — not guarantees. Adl demands honest forecasting even when the numbers are uncomfortable.",
+      "status": "standby",
+      "phase": 3,
+      "activation_month": 7,
+      "tools": [
+        "Google Sheets",
+        "Notion",
+        "Claude / GPT-4",
+        "HubSpot Forecasting",
+        "Stripe Revenue reporting",
+        "Looker Studio"
+      ],
+      "kpis": [
+        "Monthly revenue forecast accuracy within 15% of actual",
+        "Annual revenue model updated quarterly",
+        "3 scenario models maintained (conservative, base, optimistic)",
+        "Year 1 target tracking: £132K-£171K",
+        "Quarterly strategic planning deck delivered to Hasan"
+      ],
+      "inbound_from": ["AGENT_08", "AGENT_09"],
+      "outbound_to": ["AGENT_09"],
+      "data_outputs": {
+        "to_AGENT_09": "Revenue forecasts, scenario models, strategic planning summaries for dashboard integration"
+      },
+      "ethics_gate_required": false,
+      "ethics_gate_checkpoints": ["Adl check: all projections clearly labelled as estimates, with assumptions stated, never used as marketing claims"],
+      "escalation_triggers": [
+        "Forecast shows Year 1 target is at serious risk (>30% below)",
+        "Revenue concentration risk (single client >40% of revenue)",
+        "Cash flow projection shows operational risk"
+      ],
+      "year1_model": {
+        "target_low": 132000,
+        "target_high": 171000,
+        "currency": "GBP",
+        "revenue_streams": {
+          "audits": {"price_range": "£497-£1,497", "monthly_target": "4-8 audits"},
+          "sprints": {"price": 1200, "monthly_target": "2-4 sprints"},
+          "retainers": {"price_range": "£700-£5,000/mo", "target_by_month_12": "8-12 retainer clients"},
+          "campaigns": {"price_range": "£500-£2,000", "monthly_target": "2-4 campaigns"},
+          "founders_circle": {"price": 2200, "target_cohort": "8-12 members"}
+        }
+      },
+      "playbook_path": "/numu-agents/AGENT_15_THE_FORECASTER.md",
+      "system_prompt_path": "/numu-agents/prompts/FORECASTER_PROMPT.md"
+    }
+  ],
+  "phase_summary": {
+    "phase_1": {
+      "months": "1-3",
+      "label": "Foundation & First Revenue",
+      "active_agents": ["AGENT_01", "AGENT_02", "AGENT_03", "AGENT_04", "AGENT_05", "AGENT_06", "AGENT_07", "AGENT_09", "AGENT_10", "AGENT_14"],
+      "standby_agents": ["AGENT_08", "AGENT_11", "AGENT_12", "AGENT_13", "AGENT_15"],
+      "focus": "Generate first 10 audit clients, build content engine, establish outreach system"
+    },
+    "phase_2": {
+      "months": "4-6",
+      "label": "Scale & Systematise",
+      "active_agents": ["AGENT_01", "AGENT_02", "AGENT_03", "AGENT_04", "AGENT_05", "AGENT_06", "AGENT_07", "AGENT_08", "AGENT_09", "AGENT_10", "AGENT_11", "AGENT_12", "AGENT_14"],
+      "standby_agents": ["AGENT_13", "AGENT_15"],
+      "focus": "Add CRM management, campaign strategy, funnel building, begin retainer conversion"
+    },
+    "phase_3": {
+      "months": "7-9",
+      "label": "Optimise & Expand",
+      "active_agents": ["AGENT_01", "AGENT_02", "AGENT_03", "AGENT_04", "AGENT_05", "AGENT_06", "AGENT_07", "AGENT_08", "AGENT_09", "AGENT_10", "AGENT_11", "AGENT_12", "AGENT_13", "AGENT_14", "AGENT_15"],
+      "standby_agents": [],
+      "focus": "Full ethics monitoring, revenue intelligence, Founder's Circle launch"
+    },
+    "phase_4": {
+      "months": "10-12",
+      "label": "Full Operational Capacity",
+      "active_agents": ["AGENT_01", "AGENT_02", "AGENT_03", "AGENT_04", "AGENT_05", "AGENT_06", "AGENT_07", "AGENT_08", "AGENT_09", "AGENT_10", "AGENT_11", "AGENT_12", "AGENT_13", "AGENT_14", "AGENT_15"],
+      "standby_agents": [],
+      "focus": "All 15 agents fully operational, Year 1 target achievement, Year 2 planning"
+    }
+  }
+}

@@ -1,0 +1,1756 @@
+{
+  "meta": {
+    "system": "Numu Engine",
+    "version": "1.0.0",
+    "created": "2026-03-04",
+    "owner": "Hasan Sarwar",
+    "company": "Numu Consulting",
+    "tagline": "Islamic AI-Powered Ethical Growth Intelligence Consultancy",
+    "year_1_target_low": 132000,
+    "year_1_target_high": 171000,
+    "currency": "GBP",
+    "total_agents": 18,
+    "total_workflows": 7,
+    "ethics_framework": "Sidq (Truthfulness) + Amanah (Trustworthiness) + Adl (Justice) + Grandfather Principle",
+    "process_framework": "Ihsaan Flow\u2122 (Niyyah, Ikhlas, Ihsan, Rida, Amanah, Barakah)",
+    "non_negotiable_rule": "No automated output reaches clients without human review",
+    "last_updated": "2026-04-20"
+  },
+  "agents": [
+    {
+      "id": "AGENT_01",
+      "name": "THE SCOUT",
+      "role": "Lead Research & Enrichment",
+      "status": "active",
+      "phase": 1,
+      "activation_month": 1,
+      "core_tools": [
+        "Clay",
+        "LinkedIn Sales Navigator",
+        "Apollo.io",
+        "Companies House",
+        "Charity Commission",
+        "HubSpot"
+      ],
+      "primary_kpis": [
+        "10-15 qualified leads/day",
+        "80%+ enrichment accuracy",
+        "<24hr enrichment time"
+      ],
+      "ethics_gate_required": true
+    },
+    {
+      "id": "AGENT_02",
+      "name": "THE ETHICAL OUTREACH AGENT",
+      "role": "Cold Email & LinkedIn DM Outreach",
+      "status": "active",
+      "phase": 1,
+      "activation_month": 1,
+      "core_tools": [
+        "Instantly.ai",
+        "HubSpot",
+        "Claude/GPT-4",
+        "Notion",
+        "Grammarly"
+      ],
+      "primary_kpis": [
+        "30%+ open rate",
+        "8%+ reply rate",
+        "Personalisation score 7/10+"
+      ],
+      "ethics_gate_required": true
+    },
+    {
+      "id": "AGENT_03",
+      "name": "THE DIAGNOSTICIAN",
+      "role": "Sales & Discovery Agent",
+      "status": "active",
+      "phase": 1,
+      "activation_month": 1,
+      "core_tools": [
+        "HubSpot CRM",
+        "Calendly",
+        "DocuSign/PandaDoc",
+        "Stripe",
+        "Claude/GPT-4"
+      ],
+      "primary_kpis": [
+        "30%+ audit conversion from discovery call",
+        "20%+ Sprint conversion from Audit",
+        "40%+ retainer conversion from Sprint"
+      ],
+      "ethics_gate_required": true
+    },
+    {
+      "id": "AGENT_04",
+      "name": "THE INTELLIGENCE ANALYST",
+      "role": "Audit Research & Diagnosis",
+      "status": "active",
+      "phase": 1,
+      "activation_month": 1,
+      "core_tools": [
+        "Screaming Frog",
+        "Ahrefs/SEMrush",
+        "GA4",
+        "Meta Business Suite",
+        "LinkedIn Analytics",
+        "Google Search Console"
+      ],
+      "primary_kpis": [
+        "100% on-time delivery",
+        "NPS 8+/10",
+        "3+ opportunities per audit"
+      ],
+      "ethics_gate_required": true
+    },
+    {
+      "id": "AGENT_05",
+      "name": "THE SYNTHESIS AGENT",
+      "role": "Document Builder & Output Formatter",
+      "status": "active",
+      "phase": 1,
+      "activation_month": 1,
+      "core_tools": [
+        "Claude/GPT-4",
+        "Notion",
+        "Buffer/Hootsuite",
+        "Canva",
+        "Beehiiv/ConvertKit",
+        "LinkedIn"
+      ],
+      "primary_kpis": [
+        "4+ LinkedIn posts/week",
+        "1 newsletter/week",
+        "35%+ email open rate",
+        "2+ inbound leads/week from content"
+      ],
+      "ethics_gate_required": true
+    },
+    {
+      "id": "AGENT_06",
+      "name": "THE ETHICS GUARDIAN",
+      "role": "Islamic Governance & Ethics Compliance",
+      "status": "active",
+      "phase": 1,
+      "activation_month": 1,
+      "core_tools": [
+        "Notion (ethics audit log)",
+        "Claude/GPT-4",
+        "Google Sheets (compliance tracker)",
+        "HubSpot"
+      ],
+      "primary_kpis": [
+        "100% flagged items reviewed <4hrs",
+        "Zero ethics violations reaching clients",
+        "Monthly ethics audit delivered to Hasan"
+      ],
+      "ethics_gate_required": true
+    },
+    {
+      "id": "AGENT_07",
+      "name": "THE CONTENT STRATEGIST",
+      "role": "AI-Powered Content & LinkedIn Strategy",
+      "status": "active",
+      "phase": 1,
+      "activation_month": 1,
+      "core_tools": [
+        "HubSpot CRM",
+        "Notion",
+        "Calendly",
+        "DocuSign/PandaDoc",
+        "Stripe",
+        "Loom"
+      ],
+      "primary_kpis": [
+        "Client satisfaction 9+/10",
+        "Churn <5%/month",
+        "Upsell conversion 40%+ Audit\u2192Sprint",
+        "NPS 8+"
+      ],
+      "ethics_gate_required": true
+    },
+    {
+      "id": "AGENT_08",
+      "name": "THE GEO/AEO SPECIALIST",
+      "role": "AI Search Visibility & Optimisation",
+      "status": "standby",
+      "phase": 2,
+      "activation_month": 4,
+      "core_tools": [
+        "HubSpot CRM",
+        "Google Sheets",
+        "Zapier/Make",
+        "Notion",
+        "Stripe",
+        "PandaDoc"
+      ],
+      "primary_kpis": [
+        "CRM completeness 95%+",
+        "Pipeline accuracy \u00b110%",
+        "All stages updated within 24hrs"
+      ],
+      "ethics_gate_required": false
+    },
+    {
+      "id": "AGENT_09",
+      "name": "THE CLIENT GUARDIAN",
+      "role": "Client Success & Retention",
+      "status": "active",
+      "phase": 1,
+      "activation_month": 1,
+      "core_tools": [
+        "Google Looker Studio",
+        "GA4",
+        "HubSpot Reporting",
+        "LinkedIn Analytics",
+        "Google Sheets"
+      ],
+      "primary_kpis": [
+        "Weekly dashboard every Monday 9am",
+        "Monthly board pack by 3rd of month",
+        "Data accuracy 99%+"
+      ],
+      "ethics_gate_required": false
+    },
+    {
+      "id": "AGENT_10",
+      "name": "THE ANALYST",
+      "role": "Data & Performance Intelligence",
+      "status": "active",
+      "phase": 1,
+      "activation_month": 2,
+      "core_tools": [
+        "Make (Integromat)",
+        "Zapier",
+        "HubSpot Workflows",
+        "Instantly.ai",
+        "Beehiiv",
+        "Notion API"
+      ],
+      "primary_kpis": [
+        "Zero automation errors (client-facing)",
+        "100% automations have override",
+        "System uptime 99.5%+"
+      ],
+      "ethics_gate_required": false
+    },
+    {
+      "id": "AGENT_11",
+      "name": "THE CAMPAIGN ARCHITECT",
+      "role": "Campaign Strategy & Planning",
+      "status": "standby",
+      "phase": 2,
+      "activation_month": 4,
+      "core_tools": [
+        "Notion",
+        "Claude/GPT-4",
+        "Miro/FigJam",
+        "Google Trends",
+        "SparkToro",
+        "SimilarWeb",
+        "HubSpot",
+        "LinkedIn Campaign Manager",
+        "Meta Ads Manager",
+        "Google Ads"
+      ],
+      "primary_kpis": [
+        "Campaign brief within 5 days",
+        "100% campaigns have defined KPIs before launch",
+        "Post-campaign debrief within 7 days",
+        "CPL <\u00a325 LinkedIn",
+        "ROAS 3x+"
+      ],
+      "ethics_gate_required": true,
+      "note": "Covers campaign strategy, design, AND paid media execution (LinkedIn, Meta, Google Ads). No separate paid campaigns agent exists \u2014 AGENT_11 handles end-to-end campaign lifecycle."
+    },
+    {
+      "id": "AGENT_12",
+      "name": "THE AUTOMATION ENGINEER",
+      "role": "AI Systems & Workflow Automation",
+      "status": "standby",
+      "phase": 2,
+      "activation_month": 5,
+      "core_tools": [
+        "Webflow/Framer",
+        "Unbounce/Leadpages",
+        "Figma",
+        "Hotjar",
+        "Stripe",
+        "Calendly embed"
+      ],
+      "primary_kpis": [
+        "LP conversion 5%+ cold",
+        "LP conversion 15%+ warm",
+        "Page load <3s",
+        "Zero unverified claims"
+      ],
+      "ethics_gate_required": true
+    },
+    {
+      "id": "AGENT_13",
+      "name": "THE PARTNERSHIP BUILDER",
+      "role": "Alliance & Referral Development",
+      "status": "standby",
+      "phase": 3,
+      "activation_month": 7,
+      "core_tools": [
+        "Notion (ethics audit log)",
+        "Claude/GPT-4",
+        "Google Sheets (compliance tracker)",
+        "HubSpot"
+      ],
+      "primary_kpis": [
+        "100% flagged items reviewed <4hrs",
+        "Zero ethics violations reaching clients",
+        "Monthly ethics audit delivered to Hasan"
+      ],
+      "ethics_gate_required": false
+    },
+    {
+      "id": "AGENT_14",
+      "name": "THE OPERATIONS SENTINEL",
+      "role": "Admin, Legal, Compliance & CRM Data Management",
+      "status": "active",
+      "phase": 1,
+      "activation_month": 1,
+      "core_tools": [
+        "LinkedIn",
+        "LinkedIn Sales Navigator",
+        "HubSpot CRM",
+        "Eventbrite",
+        "Notion",
+        "Calendly",
+        "HubSpot CRM",
+        "Google Sheets"
+      ],
+      "primary_kpis": [
+        "5+ new strategic partnerships/quarter",
+        "2+ referral leads/month by M6",
+        "50+ qualified referral partners by end Y1",
+        "CRM completeness 95%+"
+      ],
+      "ethics_gate_required": true
+    },
+    {
+      "id": "AGENT_15",
+      "name": "THE GROWTH INTELLIGENCE",
+      "role": "Market Expansion & IP Development",
+      "status": "standby",
+      "phase": 3,
+      "activation_month": 7,
+      "core_tools": [
+        "Google Sheets",
+        "Notion",
+        "Claude/GPT-4",
+        "HubSpot Forecasting",
+        "Stripe Revenue reporting",
+        "Looker Studio"
+      ],
+      "primary_kpis": [
+        "Monthly forecast accuracy \u00b115%",
+        "3-scenario model maintained",
+        "Y1 target tracking \u00a3132K-\u00a3171K"
+      ],
+      "ethics_gate_required": false
+    },
+    {
+      "id": "AGENT_16",
+      "name": "THE IHSAAN FLOW GUARDIAN",
+      "role": "Process Methodology & Quality Assurance",
+      "status": "active",
+      "phase": 1,
+      "activation_month": 1,
+      "core_tools": [
+        "Ihsaan Flow Scoring Matrix",
+        "Notion",
+        "Claude/GPT-4"
+      ],
+      "primary_kpis": [
+        "100% deliverables scored before Ethics Gate",
+        "Average Ihsaan Score 24+ (Green)",
+        "Zero RED verdicts reaching clients"
+      ],
+      "ethics_gate_required": false,
+      "classification": "FOUNDATIONAL \u2014 NON-NEGOTIABLE"
+    },
+    {
+      "id": "AGENT_17",
+      "name": "THE FINANCIAL CONTROLLER",
+      "role": "Revenue Tracking, Invoicing, Cash Flow, P&L & Pricing Enforcement",
+      "status": "active",
+      "phase": 1,
+      "activation_month": 1,
+      "core_tools": [
+        "Stripe",
+        "Google Sheets",
+        "QuickBooks/FreeAgent",
+        "Notion"
+      ],
+      "primary_kpis": [
+        "100% invoice accuracy",
+        "< 48hr invoice dispatch after deal close",
+        "0 overdue invoices > 30 days without escalation",
+        "Monthly P&L within 3 days of month end",
+        "Cash flow forecast updated weekly"
+      ],
+      "ethics_gate_required": true
+    },
+    {
+      "id": "AGENT_18",
+      "name": "THE ONBOARDING ARCHITECT",
+      "role": "Client Onboarding \u2014 Signed Deal to First Deliverable",
+      "status": "active",
+      "phase": 1,
+      "activation_month": 1,
+      "core_tools": [
+        "Notion",
+        "Google Calendar",
+        "Email",
+        "Loom"
+      ],
+      "primary_kpis": [
+        "100% first deliverable on time",
+        "Welcome email within 2 hours of payment",
+        "Onboarding satisfaction > 9/10",
+        "< 48hr time to first meaningful contact",
+        "0 clients dropped during onboarding"
+      ],
+      "ethics_gate_required": true
+    },
+    {
+      "id": "AGENT_00W",
+      "name": "THE WRITER",
+      "role": "Shared Voice Engine \u2014 All Written Content Across All Businesses",
+      "status": "active",
+      "phase": 1,
+      "activation_month": 1,
+      "core_tools": [
+        "Perplexity Computer"
+      ],
+      "primary_kpis": [
+        "100% of written content passes through 00W before Ihsaan Flow + Ethics Gate",
+        "Tonal consistency score across all outputs",
+        "Zero voice drift between Numu, Golpo, and Personal Brand modes"
+      ],
+      "ethics_gate_required": true,
+      "note": "Cross-business shared agent. Not counted in the 18-agent Numu fleet \u2014 operates as a horizontal layer. Loaded via the hasan-writer Perplexity skill."
+    }
+  ],
+  "routing_adjacency_map": {
+    "AGENT_01": {
+      "outbound": [
+        {
+          "to": "AGENT_02",
+          "data_type": "Enriched lead profile (JSON)",
+          "trigger": "Ethics Gate APPROVED"
+        },
+        {
+          "to": "AGENT_08",
+          "data_type": "Raw lead data for CRM entry",
+          "trigger": "Ethics Gate APPROVED"
+        }
+      ],
+      "inbound": []
+    },
+    "AGENT_02": {
+      "outbound": [
+        {
+          "to": "AGENT_03",
+          "data_type": "Draft outreach sequences with metadata",
+          "trigger": "Ethics Gate APPROVED + Hasan sign-off"
+        },
+        {
+          "to": "AGENT_08",
+          "data_type": "Sequence tracking data (IDs, send dates)",
+          "trigger": "Sequence activated"
+        }
+      ],
+      "inbound": [
+        {
+          "from": "AGENT_01",
+          "data_type": "Enriched lead profile"
+        },
+        {
+          "from": "AGENT_08",
+          "data_type": "CRM contact data for personalisation"
+        }
+      ]
+    },
+    "AGENT_03": {
+      "outbound": [
+        {
+          "to": "AGENT_04",
+          "data_type": "Confirmed audit booking + briefing pack",
+          "trigger": "Invoice paid"
+        },
+        {
+          "to": "AGENT_07",
+          "data_type": "Upsell opportunity flags",
+          "trigger": "Client reached post-audit"
+        },
+        {
+          "to": "AGENT_08",
+          "data_type": "Deal status updates, revenue logged",
+          "trigger": "Any deal stage change"
+        }
+      ],
+      "inbound": [
+        {
+          "from": "AGENT_02",
+          "data_type": "Activated outreach sequences + replies"
+        },
+        {
+          "from": "AGENT_07",
+          "data_type": "Upsell-ready client flags"
+        },
+        {
+          "from": "AGENT_08",
+          "data_type": "Pipeline status and deal history"
+        }
+      ],
+      "sends_to": [
+        "AGENT_17",
+        "AGENT_18"
+      ]
+    },
+    "AGENT_04": {
+      "outbound": [
+        {
+          "to": "AGENT_05",
+          "data_type": "Content gaps, keyword opportunities, messaging recommendations",
+          "trigger": "Audit analysis complete"
+        },
+        {
+          "to": "AGENT_07",
+          "data_type": "Full audit report + upsell readiness assessment",
+          "trigger": "Post-delivery"
+        },
+        {
+          "to": "AGENT_08",
+          "data_type": "Delivery confirmation, NPS score",
+          "trigger": "Audit delivered"
+        }
+      ],
+      "inbound": [
+        {
+          "from": "AGENT_03",
+          "data_type": "Confirmed audit booking with client briefing pack"
+        }
+      ]
+    },
+    "AGENT_05": {
+      "outbound": [
+        {
+          "to": "AGENT_06",
+          "data_type": "Formatted documents for ethics review",
+          "trigger": "Document complete"
+        },
+        {
+          "to": "AGENT_09",
+          "data_type": "Client-facing reports for delivery",
+          "trigger": "Report finalised"
+        }
+      ],
+      "inbound": [
+        {
+          "from": "AGENT_04",
+          "data_type": "Raw analysis and intelligence for document formatting"
+        },
+        {
+          "from": "AGENT_10",
+          "data_type": "Performance data and charts for report assembly"
+        },
+        {
+          "from": "AGENT_11",
+          "data_type": "Campaign content brief for document assembly (Phase 2+)"
+        }
+      ]
+    },
+    "AGENT_06": {
+      "outbound": [
+        {
+          "to": "ALL_AGENTS",
+          "data_type": "Ethics Gate verdict (APPROVED/FLAGGED/REJECTED) with reasoning and remediation",
+          "trigger": "On evaluation request"
+        }
+      ],
+      "inbound": [
+        {
+          "from": "AGENT_01",
+          "data_type": "Enriched lead for ethics evaluation"
+        },
+        {
+          "from": "AGENT_02",
+          "data_type": "Outreach sequences for ethics evaluation"
+        },
+        {
+          "from": "AGENT_03",
+          "data_type": "Proposals for ethics evaluation"
+        },
+        {
+          "from": "AGENT_04",
+          "data_type": "Audit reports for ethics evaluation"
+        },
+        {
+          "from": "AGENT_05",
+          "data_type": "Content drafts for ethics evaluation"
+        },
+        {
+          "from": "AGENT_06",
+          "data_type": "Ad creative for ethics evaluation"
+        },
+        {
+          "from": "AGENT_07",
+          "data_type": "Upsell proposals for ethics evaluation"
+        },
+        {
+          "from": "AGENT_11",
+          "data_type": "Campaign strategy for ethics evaluation"
+        },
+        {
+          "from": "AGENT_12",
+          "data_type": "Landing pages for ethics evaluation"
+        }
+      ]
+    },
+    "AGENT_07": {
+      "outbound": [
+        {
+          "to": "AGENT_02",
+          "data_type": "Warm leads from content for outreach nurture",
+          "trigger": "Qualified inbound from content"
+        },
+        {
+          "to": "AGENT_06",
+          "data_type": "Content with religious/ethical claims for ethics evaluation",
+          "trigger": "On content with sensitive claims"
+        },
+        {
+          "to": "AGENT_10",
+          "data_type": "Content performance data for analysis",
+          "trigger": "Weekly"
+        }
+      ],
+      "inbound": [
+        {
+          "from": "AGENT_04",
+          "data_type": "Content gap and keyword intelligence from audits"
+        },
+        {
+          "from": "AGENT_08",
+          "data_type": "GEO/AEO briefs for content structure"
+        },
+        {
+          "from": "AGENT_10",
+          "data_type": "Performance data to inform content strategy"
+        },
+        {
+          "from": "AGENT_11",
+          "data_type": "Campaign content brief (Phase 2+)"
+        }
+      ]
+    },
+    "AGENT_08": {
+      "outbound": [
+        {
+          "to": "AGENT_07",
+          "data_type": "GEO/AEO content structure briefs for AI search optimisation",
+          "trigger": "On content cycle or new page creation"
+        },
+        {
+          "to": "AGENT_10",
+          "data_type": "AI search visibility metrics and ranking data",
+          "trigger": "Weekly"
+        }
+      ],
+      "inbound": [
+        {
+          "from": "AGENT_10",
+          "data_type": "Analytics data on AI search performance"
+        },
+        {
+          "from": "AGENT_07",
+          "data_type": "Content pipeline for GEO/AEO review"
+        }
+      ]
+    },
+    "AGENT_09": {
+      "outbound": [
+        {
+          "to": "AGENT_03",
+          "data_type": "Upsell-ready client flag with context",
+          "trigger": "Client health 75+ and value delivered"
+        },
+        {
+          "to": "AGENT_07",
+          "data_type": "Client testimonial requests for content",
+          "trigger": "Client health 80+"
+        },
+        {
+          "to": "AGENT_10",
+          "data_type": "Client portfolio data for performance analysis",
+          "trigger": "Monthly"
+        },
+        {
+          "to": "AGENT_14",
+          "data_type": "Billing queries for operations",
+          "trigger": "On client billing issue"
+        }
+      ],
+      "inbound": [
+        {
+          "from": "AGENT_03",
+          "data_type": "New client onboarding data"
+        },
+        {
+          "from": "AGENT_04",
+          "data_type": "Full audit report + upsell readiness assessment"
+        },
+        {
+          "from": "AGENT_10",
+          "data_type": "Performance dashboards for client reporting"
+        },
+        {
+          "from": "AGENT_14",
+          "data_type": "Contract and billing status updates"
+        }
+      ]
+    },
+    "AGENT_10": {
+      "outbound": [
+        {
+          "to": "AGENT_05",
+          "data_type": "Weekly content performance brief",
+          "trigger": "Monday morning"
+        },
+        {
+          "to": "AGENT_07",
+          "data_type": "Performance data to inform content strategy",
+          "trigger": "Weekly"
+        },
+        {
+          "to": "AGENT_09",
+          "data_type": "Performance dashboards for client reporting",
+          "trigger": "Weekly"
+        },
+        {
+          "to": "AGENT_08",
+          "data_type": "Analytics data for CRM enrichment",
+          "trigger": "Weekly"
+        }
+      ],
+      "inbound": [
+        {
+          "from": "AGENT_05",
+          "data_type": "Content metrics"
+        },
+        {
+          "from": "AGENT_07",
+          "data_type": "Content performance data"
+        },
+        {
+          "from": "AGENT_09",
+          "data_type": "Client portfolio data"
+        },
+        {
+          "from": "AGENT_08",
+          "data_type": "CRM data exports"
+        }
+      ]
+    },
+    "AGENT_11": {
+      "outbound": [
+        {
+          "to": "AGENT_05",
+          "data_type": "Campaign content brief for document assembly",
+          "trigger": "Strategy approved"
+        },
+        {
+          "to": "AGENT_07",
+          "data_type": "Campaign content brief for content production",
+          "trigger": "Strategy approved"
+        },
+        {
+          "to": "AGENT_12",
+          "data_type": "Campaign automation requirements",
+          "trigger": "Strategy approved"
+        }
+      ],
+      "inbound": [
+        {
+          "from": "AGENT_03",
+          "data_type": "New client campaign brief"
+        },
+        {
+          "from": "AGENT_10",
+          "data_type": "Historical performance data for strategy development"
+        }
+      ]
+    },
+    "AGENT_12": {
+      "outbound": [
+        {
+          "to": "AGENT_10",
+          "data_type": "Automation run logs and system events",
+          "trigger": "Ongoing"
+        },
+        {
+          "to": "AGENT_08",
+          "data_type": "Automation data for CRM integration",
+          "trigger": "Ongoing"
+        }
+      ],
+      "inbound": [
+        {
+          "from": "AGENT_10",
+          "data_type": "Performance data to trigger automation adjustments"
+        },
+        {
+          "from": "AGENT_11",
+          "data_type": "Campaign automation requirements (Phase 2+)"
+        }
+      ]
+    },
+    "AGENT_13": {
+      "outbound": [
+        {
+          "to": "AGENT_01",
+          "data_type": "Referred leads for enrichment and qualification",
+          "trigger": "On referral receipt"
+        },
+        {
+          "to": "AGENT_08",
+          "data_type": "Partnership records, referral tracking",
+          "trigger": "Ongoing"
+        }
+      ],
+      "inbound": []
+    },
+    "AGENT_14": {
+      "outbound": [
+        {
+          "to": "AGENT_09",
+          "data_type": "Contract and invoice status updates",
+          "trigger": "On contract generation or billing event"
+        },
+        {
+          "to": "AGENT_08",
+          "data_type": "Billing records, contract data for CRM",
+          "trigger": "Ongoing"
+        },
+        {
+          "to": "AGENT_02",
+          "data_type": "Active lead contact data for personalisation",
+          "trigger": "On request"
+        },
+        {
+          "to": "AGENT_03",
+          "data_type": "Pipeline status and deal history",
+          "trigger": "On request"
+        },
+        {
+          "to": "AGENT_10",
+          "data_type": "Consolidated data exports for dashboard",
+          "trigger": "Weekly"
+        }
+      ],
+      "inbound": [
+        {
+          "from": "AGENT_03",
+          "data_type": "Deal closure notification for contract generation"
+        },
+        {
+          "from": "AGENT_09",
+          "data_type": "Billing queries from clients"
+        },
+        {
+          "from": "AGENT_01",
+          "data_type": "Raw lead data for CRM entry"
+        },
+        {
+          "from": "AGENT_02",
+          "data_type": "Sequence tracking data"
+        },
+        {
+          "from": "AGENT_03",
+          "data_type": "Deal status, revenue"
+        },
+        {
+          "from": "AGENT_04",
+          "data_type": "Delivery confirmation"
+        },
+        {
+          "from": "AGENT_07",
+          "data_type": "Client health scores"
+        },
+        {
+          "from": "AGENT_12",
+          "data_type": "Automation and lead capture data"
+        }
+      ]
+    },
+    "AGENT_15": {
+      "outbound": [
+        {
+          "to": "AGENT_09",
+          "data_type": "Revenue forecasts, scenario models, strategic planning summaries",
+          "trigger": "Monthly"
+        }
+      ],
+      "inbound": [
+        {
+          "from": "AGENT_08",
+          "data_type": "Revenue and pipeline data"
+        },
+        {
+          "from": "AGENT_09",
+          "data_type": "Performance analytics for forecast input"
+        }
+      ]
+    },
+    "AGENT_16": {
+      "outbound": [
+        {
+          "to": "AGENT_06",
+          "data_type": "Ihsaan Flow verdict with 6-principle scores and guidance",
+          "trigger": "GREEN or AMBER-resolved verdict"
+        }
+      ],
+      "inbound": [
+        {
+          "from": "AGENT_02",
+          "data_type": "Outreach sequences for process review"
+        },
+        {
+          "from": "AGENT_04",
+          "data_type": "Audit reports for process review"
+        },
+        {
+          "from": "AGENT_05",
+          "data_type": "Content drafts for process review"
+        },
+        {
+          "from": "AGENT_07",
+          "data_type": "Content strategy for process review"
+        },
+        {
+          "from": "AGENT_11",
+          "data_type": "Campaign strategies for process review"
+        },
+        {
+          "from": "AGENT_12",
+          "data_type": "Landing pages and automations for process review"
+        }
+      ]
+    },
+    "AGENT_17": {
+      "receives_from": [
+        "AGENT_03",
+        "AGENT_09",
+        "AGENT_14",
+        "AGENT_18"
+      ],
+      "sends_to": [
+        "AGENT_09",
+        "AGENT_14",
+        "HASAN"
+      ],
+      "triggers": [
+        "Deal closed \u2192 revenue tracking",
+        "Invoice due \u2192 send invoice",
+        "Payment overdue \u2192 escalation",
+        "Monthly \u2192 P&L report",
+        "Budget threshold breached \u2192 alert"
+      ]
+    },
+    "AGENT_18": {
+      "receives_from": [
+        "AGENT_03"
+      ],
+      "sends_to": [
+        "AGENT_04",
+        "AGENT_05",
+        "AGENT_09",
+        "AGENT_17"
+      ],
+      "triggers": [
+        "Deal closed \u2192 onboarding initiated",
+        "Payment confirmed \u2192 first 48h protocol",
+        "Onboarding complete \u2192 handoff to Agent 09",
+        "Client unresponsive \u2192 escalation"
+      ]
+    },
+    "AGENT_00W": {
+      "receives_from": [
+        "AGENT_02",
+        "AGENT_07",
+        "AGENT_09",
+        "AGENT_11"
+      ],
+      "sends_to": [
+        "AGENT_16",
+        "AGENT_06"
+      ],
+      "triggers": [
+        "Any written content draft from Agent 02, 07, 09, or 11 \u2192 voice & tone review",
+        "Output routes to Agent 16 (Ihsaan Flow) then Agent 06 (Ethics Gate)"
+      ]
+    }
+  },
+  "workflows": [
+    {
+      "id": "WF_01",
+      "name": "New Lead Flow",
+      "trigger": "New prospect identified",
+      "agents_involved": [
+        "AGENT_01",
+        "AGENT_02",
+        "AGENT_03",
+        "AGENT_16",
+        "AGENT_14"
+      ],
+      "ethics_gates": 4,
+      "human_reviews": 4,
+      "success_condition": "Audit invoice paid",
+      "state_machine": "IDENTIFIED \u2192 SECTOR_SCREENED \u2192 ENRICHED \u2192 ETHICS_EVALUATED \u2192 OUTREACH_DRAFTED \u2192 IHSAAN_REVIEWED \u2192 HASAN_APPROVED \u2192 SEQUENCE_LIVE \u2192 REPLIED \u2192 DISCOVERY_BOOKED \u2192 PROPOSAL_ISSUED \u2192 CLOSED \u2192 CONTRACT_GENERATED (AGENT_14) \u2192 ONBOARDING | NOT_A_FIT (content nurture) | COLD (content nurture, 90-day window)"
+    },
+    {
+      "id": "WF_02",
+      "name": "Audit Delivery Flow",
+      "trigger": "Audit invoice paid and onboarding questionnaire received",
+      "agents_involved": [
+        "AGENT_04",
+        "AGENT_05",
+        "AGENT_07",
+        "AGENT_16",
+        "AGENT_14"
+      ],
+      "ethics_gates": 3,
+      "human_reviews": 3,
+      "success_condition": "Audit delivered, NPS 8+, upsell conversation opened",
+      "state_machine": "BRIEFED \u2192 SCOPE_CONFIRMED \u2192 DATA_COLLECTED \u2192 ANALYSIS_COMPLETE \u2192 REPORT_DRAFTED \u2192 IHSAAN_REVIEWED \u2192 ETHICS_CHECKED \u2192 HASAN_APPROVED \u2192 DELIVERED \u2192 NPS_CAPTURED \u2192 UPSELL_ASSESSED \u2192 UPSELL_READY / NURTURE_ONLY"
+    },
+    {
+      "id": "WF_03",
+      "name": "Content Flow",
+      "trigger": "Monday morning (recurring weekly)",
+      "agents_involved": [
+        "AGENT_05",
+        "AGENT_06",
+        "AGENT_09",
+        "AGENT_16",
+        "AGENT_08"
+      ],
+      "ethics_gates": 2,
+      "human_reviews": 3,
+      "success_condition": "4 posts, 1 newsletter published, 1+ inbound lead attributed",
+      "state_machine": "CYCLE_START \u2192 PERFORMANCE_REVIEWED \u2192 CALENDAR_PLANNED \u2192 GEO_AEO_BRIEFED (AGENT_08 provides AI search structure guidance) \u2192 HASAN_APPROVED \u2192 CONTENT_PRODUCED \u2192 IHSAAN_REVIEWED \u2192 ETHICS_CHECKED \u2192 HASAN_REVIEWED \u2192 SCHEDULED \u2192 PUBLISHED \u2192 ENGAGEMENT_MONITORED \u2192 METRICS_CAPTURED \u2192 CYCLE_END"
+    },
+    {
+      "id": "WF_04",
+      "name": "Upsell Flow",
+      "trigger": "AGENT_07 raises upsell-ready flag",
+      "agents_involved": [
+        "AGENT_07",
+        "AGENT_03",
+        "AGENT_16",
+        "AGENT_14"
+      ],
+      "ethics_gates": 4,
+      "human_reviews": 4,
+      "success_condition": "Client moves to next tier with genuine enthusiasm"
+    },
+    {
+      "id": "WF_05",
+      "name": "Campaign Flow",
+      "trigger": "Client requests campaign service",
+      "agents_involved": [
+        "AGENT_11",
+        "AGENT_05",
+        "AGENT_06",
+        "AGENT_12",
+        "AGENT_09",
+        "AGENT_16"
+      ],
+      "ethics_gates": 5,
+      "human_reviews": 5,
+      "success_condition": "Campaign KPIs met, honest report delivered",
+      "phases_active": [
+        2,
+        3,
+        4
+      ],
+      "state_machine": "BRIEF_RECEIVED \u2192 ETHICS_SCREENED \u2192 STRATEGY_DEVELOPED \u2192 CLIENT_APPROVED_STRATEGY \u2192 CREATIVE_PRODUCED \u2192 IHSAAN_REVIEWED \u2192 ETHICS_CHECKED \u2192 CLIENT_APPROVED_CREATIVE \u2192 PAGE_BUILT \u2192 LAUNCHED \u2192 OPTIMISING \u2192 REPORTING \u2192 EXTENDED / COMPLETED"
+    },
+    {
+      "id": "WF_06",
+      "name": "Automation Flow",
+      "trigger": "Automation requirement identified",
+      "agents_involved": [
+        "AGENT_12",
+        "AGENT_10"
+      ],
+      "ethics_gates": 1,
+      "human_reviews": 2,
+      "success_condition": "Automation running, documented, with override, Hasan has full visibility"
+    },
+    {
+      "id": "WF_07",
+      "name": "Growth Flow",
+      "trigger": "First Monday of each month",
+      "agents_involved": [
+        "AGENT_10",
+        "AGENT_15",
+        "AGENT_09",
+        "AGENT_06"
+      ],
+      "ethics_gates": 1,
+      "human_reviews": 2,
+      "success_condition": "Hasan makes informed strategic decisions for next period",
+      "phases_active": [
+        3,
+        4
+      ],
+      "state_machine": "MONTH_START \u2192 PHASE_CHECK (AGENT_15 active? If not, Hasan provides forecasts manually) \u2192 PERFORMANCE_REVIEWED (AGENT_10) \u2192 FORECAST_UPDATED (AGENT_15, Phase 3+) \u2192 CLIENT_HEALTH_REVIEWED (AGENT_09) \u2192 ETHICS_AUDIT (AGENT_06) \u2192 HASAN_STRATEGIC_REVIEW \u2192 DECISIONS_LOGGED"
+    }
+  ],
+  "ethics_gate_protocol": {
+    "name": "Ethics Gate\u2122",
+    "operator_phase_1_2": "Hasan Sarwar (manual review)",
+    "operator_phase_3_4": "AGENT_06 (THE ETHICS GUARDIAN) + Hasan Sarwar (escalations)",
+    "pillars": {
+      "sidq": {
+        "name": "Truthfulness",
+        "arabic": "\u0635\u0650\u062f\u0652\u0642",
+        "definition": "Every claim, projection, case study, and testimonial must be verifiably true. No exaggeration, no spin, no selective omission that creates false impressions.",
+        "source": "Quran 9:119",
+        "check_questions": [
+          "Is every factual claim in this output verifiable?",
+          "Are any statistics from credible, citable sources?",
+          "Does this output create any false impression, even through selective truth?",
+          "Would Hasan be comfortable defending every statement publicly?",
+          "Are any projections or estimates clearly labelled as such, not presented as certainties?"
+        ]
+      },
+      "amanah": {
+        "name": "Trustworthiness",
+        "arabic": "\u0623\u064e\u0645\u064e\u0627\u0646\u064e\u0629",
+        "definition": "Numu acts as a trusted custodian of client data, money, and reputation. Deliver what is promised. Charge only what is earned. Never exploit information asymmetry.",
+        "source": "Quran 4:58, 8:27",
+        "check_questions": [
+          "Does this output honour all commitments made to the client?",
+          "Is the recommended service genuinely in the client's best interest?",
+          "Are we proposing a price commensurate with the value delivered?",
+          "Does this automation or communication act in Hasan's name with his full knowledge?",
+          "Are we using any information the client shared in confidence in a way they wouldn't expect?"
+        ]
+      },
+      "adl": {
+        "name": "Justice",
+        "arabic": "\u0639\u064e\u062f\u0652\u0644",
+        "definition": "Fair dealing with all parties \u2014 clients, prospects, competitors, and the public. Honest reporting. Fair pricing. No exploitation of vulnerability.",
+        "source": "Quran 4:135, 5:8",
+        "check_questions": [
+          "Is this pricing fair given the value and the client's situation?",
+          "Are we presenting campaign results honestly, including underperformance?",
+          "Does this content or ad target vulnerable people in an exploitative way?",
+          "Are we speaking about competitors fairly and truthfully?",
+          "Would a fair-minded observer consider this treatment just?"
+        ]
+      },
+      "grandfather_principle": {
+        "name": "Grandfather Principle",
+        "definition": "Existing client pricing and commitments are locked for the duration of their engagement. Price increases only apply to new clients or new scope. Loyalty is rewarded, never punished.",
+        "check_questions": [
+          "Is this client being offered the same or better terms than when they signed?",
+          "Have any price increases been communicated with adequate notice?",
+          "Is any upsell framed as an addition, not a replacement of existing value?"
+        ]
+      }
+    },
+    "verdict_types": {
+      "APPROVED": {
+        "code": "EG_APPROVED",
+        "meaning": "Output passes all four ethics pillars. May proceed to next step.",
+        "action": "Workflow continues. Reasoning logged."
+      },
+      "FLAGGED": {
+        "code": "EG_FLAGGED",
+        "meaning": "Output raises a concern that requires human judgment. Not necessarily a violation \u2014 needs Hasan review.",
+        "action": "Workflow PAUSES. Notification sent to Hasan. Hasan makes final decision within 4hrs. If no response: treat as REJECTED."
+      },
+      "REJECTED": {
+        "code": "EG_REJECTED",
+        "meaning": "Output clearly violates one or more ethics pillars. Must not proceed.",
+        "action": "Workflow STOPS. Output returned to originating agent with specific violation reason and remediation guidance. Hasan notified. Incident logged in Ethics Audit Log."
+      }
+    },
+    "mandatory_checkpoints": [
+      {
+        "workflow": "WF_01",
+        "step": 3,
+        "agent": "AGENT_01",
+        "check": "Full lead ethics evaluation"
+      },
+      {
+        "workflow": "WF_01",
+        "step": 5,
+        "agent": "AGENT_02",
+        "check": "Outreach sequence Sidq check"
+      },
+      {
+        "workflow": "WF_01",
+        "step": 8,
+        "agent": "AGENT_03",
+        "check": "Proposal ethics check"
+      },
+      {
+        "workflow": "WF_02",
+        "step": 4,
+        "agent": "AGENT_04",
+        "check": "Audit report honesty check"
+      },
+      {
+        "workflow": "WF_02",
+        "step": 8,
+        "agent": "AGENT_07",
+        "check": "Upsell readiness Amanah check"
+      },
+      {
+        "workflow": "WF_03",
+        "step": 3,
+        "agent": "AGENT_05",
+        "check": "Content Sidq check"
+      },
+      {
+        "workflow": "WF_04",
+        "step": 1,
+        "agent": "AGENT_07",
+        "check": "Value validation Amanah check"
+      },
+      {
+        "workflow": "WF_04",
+        "step": 3,
+        "agent": "AGENT_03",
+        "check": "Upsell call Grandfather Principle check"
+      },
+      {
+        "workflow": "WF_04",
+        "step": 4,
+        "agent": "AGENT_03",
+        "check": "Upsell proposal full ethics check"
+      },
+      {
+        "workflow": "WF_05",
+        "step": 1,
+        "agent": "AGENT_11",
+        "check": "Campaign brief integrity check"
+      },
+      {
+        "workflow": "WF_05",
+        "step": 2,
+        "agent": "AGENT_11",
+        "check": "Strategy Adl check"
+      },
+      {
+        "workflow": "WF_05",
+        "step": 3,
+        "agent": "AGENT_05",
+        "check": "Creative Sidq check"
+      },
+      {
+        "workflow": "WF_05",
+        "step": 4,
+        "agent": "AGENT_12",
+        "check": "Landing page full check"
+      },
+      {
+        "workflow": "WF_06",
+        "step": 1,
+        "agent": "AGENT_10",
+        "check": "Automation Amanah check"
+      },
+      {
+        "workflow": "WF_02",
+        "step": 3.5,
+        "agent": "AGENT_16",
+        "check": "Ihsaan Flow review on audit report \u2014 all 6 principles scored before Ethics Gate"
+      },
+      {
+        "workflow": "WF_03",
+        "step": 2.5,
+        "agent": "AGENT_16",
+        "check": "Ihsaan Flow review on content \u2014 all 6 principles scored before Ethics Gate"
+      },
+      {
+        "workflow": "WF_05",
+        "step": 2.5,
+        "agent": "AGENT_16",
+        "check": "Ihsaan Flow review on creative \u2014 all 6 principles scored before Ethics Gate"
+      },
+      {
+        "workflow": "WF_01",
+        "step": 4.5,
+        "agent": "AGENT_16",
+        "check": "Ihsaan Flow review on outreach sequences \u2014 all 6 principles scored before Hasan review"
+      },
+      {
+        "workflow": "WF_04",
+        "step": 3.5,
+        "agent": "AGENT_16",
+        "check": "Ihsaan Flow review on upsell proposal \u2014 all 6 principles scored before Hasan review"
+      }
+    ]
+  },
+  "ihsaan_flow_protocol": {
+    "name": "Ihsaan Flow\u2122",
+    "agent": "AGENT_16 (THE IHSAAN FLOW GUARDIAN)",
+    "classification": "FOUNDATIONAL \u2014 NON-NEGOTIABLE",
+    "operator_all_phases": "AGENT_16 (active from Phase 1, cannot be suspended or bypassed)",
+    "pipeline_position": "PRODUCTION \u2192 [AGENT_16 Ihsaan Flow Review] \u2192 [AGENT_06 Ethics Gate Review] \u2192 DELIVERY",
+    "principles": {
+      "niyyah": {
+        "name": "Intention",
+        "arabic": "\u0646\u064a\u0629",
+        "core_question": "Is the purpose behind this work clear, noble, and aligned with Numu's values?"
+      },
+      "ikhlas": {
+        "name": "Sincerity",
+        "arabic": "\u0625\u062e\u0644\u0627\u0635",
+        "core_question": "Is the approach honest and free from ego, performance, or manipulation?"
+      },
+      "ihsan": {
+        "name": "Excellence",
+        "arabic": "\u0625\u062d\u0633\u0627\u0646",
+        "core_question": "Was the work executed with precision, craftsmanship, and genuine mastery?"
+      },
+      "rida": {
+        "name": "Contentment",
+        "arabic": "\u0631\u0636\u0627",
+        "core_question": "Was the process approached with patience and respect \u2014 not rushed or pressured?"
+      },
+      "amanah": {
+        "name": "Trust",
+        "arabic": "\u0623\u0645\u0627\u0646\u0629",
+        "core_question": "Was responsibility honoured toward all stakeholders and their entrusted resources?"
+      },
+      "barakah": {
+        "name": "Blessing",
+        "arabic": "\u0628\u0631\u0643\u0629",
+        "core_question": "Is this work oriented toward enduring benefit and legacy, not just immediate delivery?"
+      }
+    },
+    "scoring": {
+      "scale": "1-5 per principle",
+      "total_range": "6-30",
+      "bands": {
+        "GREEN": {
+          "range": "24-30",
+          "meaning": "Process meets Numu standard",
+          "action": "Proceed to Ethics Gate"
+        },
+        "AMBER": {
+          "range": "18-23",
+          "meaning": "Process has weaknesses requiring attention",
+          "action": "Return with improvement guidance. Agent revises. Rescore. Maximum 2 cycles."
+        },
+        "RED": {
+          "range": "below 18 OR any single principle scored 1",
+          "meaning": "Fundamental process failure",
+          "action": "HALT. Do not proceed. Escalate to Hasan with full 6-principle breakdown."
+        }
+      }
+    },
+    "review_points": [
+      "Pre-project (Kickoff): Are we starting with clear intention and the right reasons?",
+      "Mid-project (Execution): Is the work being done with sincerity, care, and excellence?",
+      "Post-project (Before Delivery): Does the final output reflect the six principles?"
+    ],
+    "verdict_types": {
+      "GREEN": "Proceed to Ethics Gate",
+      "AMBER": "Return with specific improvement notes per principle. Max 2 revision cycles.",
+      "RED": "HALT. Escalate to Hasan immediately with full 6-principle scoring breakdown."
+    }
+  },
+  "phase_activation_schedule": {
+    "phase_1": {
+      "id": "PHASE_1",
+      "label": "Foundation & First Revenue",
+      "months": "1-3",
+      "active_agents": [
+        "AGENT_01",
+        "AGENT_02",
+        "AGENT_03",
+        "AGENT_04",
+        "AGENT_05",
+        "AGENT_06",
+        "AGENT_07",
+        "AGENT_09",
+        "AGENT_10",
+        "AGENT_14",
+        "AGENT_16"
+      ],
+      "standby_agents": [
+        "AGENT_08",
+        "AGENT_11",
+        "AGENT_12",
+        "AGENT_13",
+        "AGENT_15"
+      ],
+      "primary_focus": "Generate first 10 audit clients. Build content engine. Establish outreach system. Hasan leads all delivery personally.",
+      "success_metrics": {
+        "audits_sold": "10+",
+        "monthly_revenue_target": "8000-12000",
+        "linkedin_followers": "500+",
+        "email_subscribers": "250+"
+      }
+    },
+    "phase_2": {
+      "id": "PHASE_2",
+      "label": "Scale & Systematise",
+      "months": "4-6",
+      "active_agents": [
+        "AGENT_01",
+        "AGENT_02",
+        "AGENT_03",
+        "AGENT_04",
+        "AGENT_05",
+        "AGENT_06",
+        "AGENT_07",
+        "AGENT_08",
+        "AGENT_09",
+        "AGENT_10",
+        "AGENT_11",
+        "AGENT_12",
+        "AGENT_14",
+        "AGENT_16"
+      ],
+      "standby_agents": [
+        "AGENT_13",
+        "AGENT_15"
+      ],
+      "primary_focus": "Add CRM management, campaign strategy, funnel building. Begin retainer conversion. First Founder's Circle cohort planning.",
+      "success_metrics": {
+        "monthly_revenue_target": "12000-18000",
+        "active_retainers": "3-5",
+        "sprint_clients": "2-4 active"
+      }
+    },
+    "phase_3": {
+      "id": "PHASE_3",
+      "label": "Optimise & Expand",
+      "months": "7-9",
+      "active_agents": [
+        "AGENT_01",
+        "AGENT_02",
+        "AGENT_03",
+        "AGENT_04",
+        "AGENT_05",
+        "AGENT_06",
+        "AGENT_07",
+        "AGENT_08",
+        "AGENT_09",
+        "AGENT_10",
+        "AGENT_11",
+        "AGENT_12",
+        "AGENT_13",
+        "AGENT_14",
+        "AGENT_15",
+        "AGENT_16"
+      ],
+      "standby_agents": [],
+      "primary_focus": "Full ethics monitoring active. Revenue intelligence online. Founder's Circle launch. All systems optimised.",
+      "success_metrics": {
+        "monthly_revenue_target": "15000-22000",
+        "active_retainers": "6-10",
+        "founders_circle_members": "4-8"
+      }
+    },
+    "phase_4": {
+      "id": "PHASE_4",
+      "label": "Full Operational Capacity",
+      "months": "10-12",
+      "active_agents": [
+        "AGENT_01",
+        "AGENT_02",
+        "AGENT_03",
+        "AGENT_04",
+        "AGENT_05",
+        "AGENT_06",
+        "AGENT_07",
+        "AGENT_08",
+        "AGENT_09",
+        "AGENT_10",
+        "AGENT_11",
+        "AGENT_12",
+        "AGENT_13",
+        "AGENT_14",
+        "AGENT_15",
+        "AGENT_16"
+      ],
+      "standby_agents": [],
+      "primary_focus": "All 16 agents fully operational. Year 1 target achievement (\u00a3132K-\u00a3171K). Year 2 planning commenced.",
+      "success_metrics": {
+        "annual_revenue_target": "132000-171000",
+        "active_retainers": "8-12",
+        "founders_circle_members": "8-12"
+      }
+    }
+  },
+  "priority_hierarchy": [
+    {
+      "level": 1,
+      "priority": "Client Delivery",
+      "description": "Active client work \u2014 audits, sprints, retainer deliverables, campaigns. A client deadline beats everything. If resource conflict arises, active client delivery always wins.",
+      "colour": "RED \u2014 Immediate"
+    },
+    {
+      "level": 2,
+      "priority": "Ethics Gate",
+      "description": "Any active Ethics Gate evaluation, flag, or violation. Ethics always supersedes commercial pressure. An ethics review in progress pauses all associated workflow steps until resolved.",
+      "colour": "ORANGE \u2014 Same day"
+    },
+    {
+      "level": 3,
+      "priority": "Active Sales",
+      "description": "Live deals with proposals outstanding, discovery calls booked, or replies requiring response. Time-sensitive commercial opportunities that could go cold.",
+      "colour": "YELLOW \u2014 Within 4 hrs"
+    },
+    {
+      "level": 4,
+      "priority": "Content",
+      "description": "Content production and scheduling. Builds brand, generates inbound. Important but not time-critical in the same way as client delivery or live sales.",
+      "colour": "GREEN \u2014 Within 24 hrs"
+    },
+    {
+      "level": 5,
+      "priority": "Outreach",
+      "description": "Cold and warm outreach sequence management. Pipeline building. Important for long-term but lowest-urgency of revenue-generating activities.",
+      "colour": "BLUE \u2014 Within 48 hrs"
+    },
+    {
+      "level": 6,
+      "priority": "Internal Operations",
+      "description": "CRM hygiene, reporting, automation maintenance, system updates. Important for health of business but should never displace the above.",
+      "colour": "GREY \u2014 This week"
+    }
+  ],
+  "failure_modes": [
+    {
+      "id": "FM_01",
+      "failure": "Ethics Gate REJECTED on outreach sequence",
+      "immediate_action": "Halt sequence activation. Return to AGENT_02 with specific violation and remediation notes.",
+      "recovery": "AGENT_02 revises sequence addressing all flagged issues. Re-submit for Ethics Gate. Maximum 2 revision cycles before escalation to Hasan for manual rewrite.",
+      "escalation_threshold": "2 failed revision cycles"
+    },
+    {
+      "id": "FM_02",
+      "failure": "Client NPS score below 7",
+      "immediate_action": "Escalate to Hasan within 1 hour. AGENT_07 prepares remediation options.",
+      "recovery": "Hasan calls client personally within 24 hours. Remediation plan agreed. Additional deliverable at no charge considered. No upsell until NPS recovers to 8+.",
+      "escalation_threshold": "Immediate \u2014 no delay threshold"
+    },
+    {
+      "id": "FM_03",
+      "failure": "Campaign ROAS below 1.5x after 2 weeks",
+      "immediate_action": "Flag to Hasan. Prepare pause recommendation with analysis.",
+      "recovery": "Client call to discuss options: pause and replan, budget reduce, audience/creative refresh. Never continue spending against a demonstrably failing strategy.",
+      "escalation_threshold": "2 weeks below 1.5x ROAS"
+    },
+    {
+      "id": "FM_04",
+      "failure": "Automation error with client-facing impact",
+      "immediate_action": "Pause automation immediately. Assess blast radius (how many clients/prospects affected?).",
+      "recovery": "AGENT_10 diagnoses and fixes root cause. AGENT_07 contacts affected clients with honest explanation and apology. Hasan reviews and approves all client communications about the error.",
+      "escalation_threshold": "Any client-facing automation error \u2014 immediate"
+    },
+    {
+      "id": "FM_05",
+      "failure": "Lead in prohibited sector passed through by AGENT_01 in error",
+      "immediate_action": "Halt entire workflow for that lead. Do not enrich, do not outreach.",
+      "recovery": "Archive lead with sector violation reason. Ethics incident logged. AGENT_01 prompt reviewed for gap that allowed the error.",
+      "escalation_threshold": "Immediate \u2014 Hasan notified"
+    },
+    {
+      "id": "FM_06",
+      "failure": "Year 1 revenue forecast more than 30% below target by Month 6",
+      "immediate_action": "Emergency growth review convened by Hasan with AGENT_09 and AGENT_15 data.",
+      "recovery": "Strategy review: pricing, positioning, lead volume, conversion rates. Identify single highest-leverage action. Do not panic-sell. Never compromise ethics for revenue.",
+      "escalation_threshold": ">30% below target at Month 6"
+    },
+    {
+      "id": "FM_07",
+      "failure": "Key agent produces outputs with systematic ethics drift",
+      "immediate_action": "Pause agent. AGENT_06 (THE ETHICS GUARDIAN, Phase 1+) or Hasan (if escalation required) conducts full audit of recent outputs.",
+      "recovery": "Revise agent prompt/system prompt to close the drift. Re-test with sample tasks. Reactivate only after passing comprehensive ethics evaluation.",
+      "escalation_threshold": "Any pattern detected \u2014 3+ similar ethics flags from same agent"
+    },
+    {
+      "id": "FM_08",
+      "failure": "Ihsaan Flow RED verdict on deliverable",
+      "immediate_action": "HALT delivery. Return to originating agent with full 6-principle breakdown and specific failure reasons per principle.",
+      "recovery": "Agent addresses specific principle failures. AGENT_16 rescores. Maximum 2 revision cycles before Hasan intervention.",
+      "escalation_threshold": "Hasan intervention if 2 cycles fail to achieve GREEN, or if Niyyah (intention) scores 1 at any point."
+    }
+  ],
+  "daily_rhythm": {
+    "06_00": "AGENT_09 compiles overnight metrics. Lead inbox checked.",
+    "07_00": "AGENT_01 begins daily lead research and enrichment cycle.",
+    "08_00": "AGENT_02 reviews any new enriched leads for sequence readiness.",
+    "09_00": "AGENT_09 delivers weekly dashboard (Mondays only). All agents receive daily summary.",
+    "10_00": "Hasan reviews overnight content performance, outreach replies, and Ethics Gate flags.",
+    "10_00-13_00": "Priority 1 work: client delivery \u2014 audits, sprint work, retainer deliverables.",
+    "13_00-15_00": "Priority 3 work: active sales \u2014 discovery calls, proposal reviews, follow-ups.",
+    "15_00-17_00": "Priority 4 work: content review and approval. Outreach sequence approvals.",
+    "17_00": "End-of-day pipeline update. AGENT_08 logs all deal movements.",
+    "18_00": "AGENT_09 captures daily metrics. AGENT_05 schedules next-day content.",
+    "weekly_monday": "Content calendar planning. AGENT_09 weekly dashboard. AGENT_07 client health review.",
+    "weekly_friday": "End-of-week performance review. Pipeline audit. Outreach sequence review for next week.",
+    "monthly_day_1": "AGENT_09 delivers monthly board pack. AGENT_15 updates revenue forecast (Phase 3+).",
+    "monthly_day_3": "Hasan strategic review session using board pack."
+  },
+  "service_catalogue": {
+    "audit_starter": {
+      "name": "Essential / Starter Growth Audit",
+      "price": 497,
+      "currency": "GBP",
+      "turnaround": "5 business days",
+      "delivery_agent": "AGENT_04",
+      "deliverables": [
+        "Digital presence review",
+        "Top 3 quick wins",
+        "Basic competitor scan",
+        "PDF report 15-25 pages"
+      ],
+      "page_count": "15-25 pages"
+    },
+    "audit_growth": {
+      "name": "Premium / Growth Audit",
+      "price": 897,
+      "currency": "GBP",
+      "turnaround": "7 business days",
+      "delivery_agent": "AGENT_04",
+      "deliverables": [
+        "Full digital audit",
+        "SEO & content gap analysis",
+        "Funnel mapping",
+        "5 strategic recommendations",
+        "60-min delivery call",
+        "PDF report 25-40 pages"
+      ],
+      "page_count": "25-40 pages"
+    },
+    "audit_scale": {
+      "name": "Elite / Scale Audit",
+      "price": 1497,
+      "currency": "GBP",
+      "turnaround": "10 business days",
+      "delivery_agent": "AGENT_04",
+      "deliverables": [
+        "Full growth intelligence audit",
+        "Competitor intelligence",
+        "Market opportunity mapping",
+        "10 prioritised recommendations",
+        "90-min strategy call",
+        "PDF report 40-60 pages",
+        "30-day quick win roadmap"
+      ],
+      "page_count": "40-60 pages + slide deck"
+    },
+    "sprint": {
+      "name": "90-Day Growth Sprint",
+      "price": 1200,
+      "currency": "GBP",
+      "duration": "90 days",
+      "delivery_agent": "AGENT_04",
+      "note": "Requires prior Audit. Sprint implements top recommendations from audit."
+    },
+    "retainer_base": {
+      "name": "Monthly Growth Retainer",
+      "price_min": 700,
+      "price_max": 5000,
+      "currency": "GBP",
+      "billing": "Monthly",
+      "delivery_agent": "AGENT_07",
+      "note": "Earned after Sprint demonstrates value. Not sold. Scope and price agreed case-by-case."
+    },
+    "campaign": {
+      "name": "Campaign Management",
+      "price_min": 500,
+      "price_max": 2000,
+      "currency": "GBP",
+      "billing": "Per campaign or monthly management fee",
+      "delivery_agent": "AGENT_11",
+      "note": "Phase 2+ service. AGENT_11 (Campaign Architect) handles strategy and execution. No dedicated paid media agent \u2014 Hasan manages paid execution in Phase 1-2."
+    },
+    "founders_circle": {
+      "name": "Founder's Circle",
+      "price": 2200,
+      "currency": "GBP",
+      "billing": "Annual or payment plan",
+      "delivery_agents": [
+        "AGENT_04",
+        "AGENT_07",
+        "AGENT_05"
+      ],
+      "target_cohort": "8-12 members",
+      "note": "Exclusive group for established Muslim business founders. Phase 3+ launch."
+    }
+  },
+  "escalation_to_hasan": {
+    "triggers": [
+      "Any Ethics Gate FLAGGED verdict",
+      "Any Ethics Gate REJECTED verdict",
+      "Client NPS below 7",
+      "Client expressing dissatisfaction",
+      "Deal value above \u00a35,000",
+      "Lead in sensitive or ambiguous sector",
+      "Campaign underperforming >30% below KPI after 2 weeks",
+      "Any client-facing automation error",
+      "Revenue forecast >30% below target at Month 6",
+      "Systematic ethics drift detected in any agent",
+      "Any Ihsaan Flow RED verdict (process failure \u2014 halt delivery immediately)",
+      "Any Ihsaan Flow principle scored 1 (indicates fundamental process failure, especially Niyyah)",
+      "Repeated AMBER verdicts (3+ from the same workflow) suggesting systemic process weakness",
+      "Partnership candidate with ethical ambiguity",
+      "Any request that requires compromising an ethics pillar",
+      "Competitor disparagement request",
+      "Request to send unsolicited bulk communications",
+      "Any situation not covered by these protocols"
+    ],
+    "contact_method": "Immediate Notion alert + flag in relevant workflow",
+    "response_time_expected": "4 hours (business hours), 24 hours (evenings/weekends)",
+    "non_negotiable": "Hasan is the final authority on all ethics decisions. No agent may override a Hasan ruling."
+  },
+  "principles": {
+    "retainers_are_earned": "A retainer is never sold. It is earned through demonstrated value at each rung of The Ladder. An audit must be delivered and found valuable before a Sprint is proposed. A Sprint must be delivered and found valuable before a retainer is proposed.",
+    "islamic_ethics_always_wins": "When modern marketing practice conflicts with Islamic ethics (Sidq, Amanah, Adl), Islamic ethics prevails without exception. Revenue is never a justification for compromising principles.",
+    "no_automated_client_contact": "No automated output \u2014 email, LinkedIn message, report, proposal, or any other communication \u2014 may reach a client or prospect without Hasan's prior review and approval.",
+    "grandfather_principle": "Existing client pricing is locked for the duration of their engagement. Price increases only affect new clients or new scope. Loyalty is rewarded.",
+    "honest_over_impressive": "When reporting results to clients, honest data is more important than impressive data. An honest report of a campaign that underperformed, with a clear improvement plan, is more Amanah than a polished report that hides the truth."
+  },
+  "agent_name_legend": {
+    "description": "Cross-reference table \u2014 maps Agent IDs to their authoritative playbook titles. All routing, workflows, and references use these names.",
+    "agents": {
+      "AGENT_01": "THE SCOUT \u2014 Lead Research & Enrichment",
+      "AGENT_02": "THE ETHICAL OUTREACH AGENT \u2014 Cold Email & LinkedIn DM Outreach",
+      "AGENT_03": "THE DIAGNOSTICIAN \u2014 Sales & Discovery Agent",
+      "AGENT_04": "THE INTELLIGENCE ANALYST \u2014 Audit Research & Diagnosis",
+      "AGENT_05": "THE SYNTHESIS AGENT \u2014 Document Builder & Output Formatter",
+      "AGENT_06": "THE ETHICS GUARDIAN \u2014 Islamic Governance & Ethics Compliance",
+      "AGENT_07": "THE CONTENT STRATEGIST \u2014 AI-Powered Content & LinkedIn Strategy",
+      "AGENT_08": "THE GEO/AEO SPECIALIST \u2014 AI Search Visibility & Optimisation",
+      "AGENT_09": "THE CLIENT GUARDIAN \u2014 Client Success & Retention",
+      "AGENT_10": "THE ANALYST \u2014 Data & Performance Intelligence",
+      "AGENT_11": "THE CAMPAIGN ARCHITECT \u2014 Campaign Strategy & Planning",
+      "AGENT_12": "THE AUTOMATION ENGINEER \u2014 AI Systems & Workflow Automation",
+      "AGENT_13": "THE PARTNERSHIP BUILDER \u2014 Alliance & Referral Development",
+      "AGENT_14": "THE OPERATIONS SENTINEL \u2014 Admin, Legal, Compliance & CRM",
+      "AGENT_15": "THE GROWTH INTELLIGENCE \u2014 Market Expansion & IP Development",
+      "AGENT_16": "THE IHSAAN FLOW GUARDIAN \u2014 Process Methodology & Quality"
+    },
+    "AGENT_17": "THE FINANCIAL CONTROLLER",
+    "AGENT_18": "THE ONBOARDING ARCHITECT",
+    "AGENT_00W": "THE WRITER"
+  }
+}

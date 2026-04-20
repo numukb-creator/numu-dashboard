@@ -1,0 +1,612 @@
+{
+  "meta": {
+    "system": "Numu Engine",
+    "version": "1.0.0",
+    "created": "2026-03-04",
+    "total_workflows": 7,
+    "ethics_gate_operator": "AGENT_13 (Phase 3+) | Hasan Sarwar (Phase 1-2)",
+    "non_negotiable": "No automated output reaches clients without human review. Ethics Gate is mandatory at every checkpoint marked ethics_gate: true."
+  },
+  "workflows": [
+    {
+      "id": "WF_01",
+      "name": "New Lead Flow",
+      "description": "End-to-end pipeline from lead identification through enrichment, outreach, and conversion to paid audit. The full new business origination engine.",
+      "trigger": "New prospect identified (via LinkedIn, referral, inbound enquiry, or cold list)",
+      "estimated_duration": "7-21 days from identification to audit booking",
+      "phases_active": [1, 2, 3, 4],
+      "steps": [
+        {
+          "order": 1,
+          "agent": "AGENT_01",
+          "name": "Lead Identification & Sector Screen",
+          "action": "Identify prospect via LinkedIn Sales Navigator, Apollo.io, or referral. Conduct immediate sector screening against prohibited sectors list.",
+          "output": "Binary pass/fail on sector eligibility. If prohibited sector: workflow TERMINATES. If flagged sector: escalate to Hasan.",
+          "ethics_gate": true,
+          "ethics_gate_check": "Sector screen against prohibited list (alcohol, gambling, adult, tobacco, arms, riba-based finance)",
+          "duration": "30 mins",
+          "human_review": false,
+          "failure_action": "TERMINATE — log reason in CRM, do not enrich lead"
+        },
+        {
+          "order": 2,
+          "agent": "AGENT_01",
+          "name": "Full Lead Enrichment",
+          "action": "Enrich lead with: company name, size, turnover estimate, sector, decision-maker name, email, phone, LinkedIn URL, digital presence score, Companies House/Charity Commission record, pain indicators, recent news.",
+          "output": "Enriched lead card (JSON format, minimum 80% field completeness)",
+          "ethics_gate": false,
+          "duration": "1-4 hrs",
+          "human_review": false,
+          "failure_action": "If enrichment below 60% completeness: flag to Hasan, pause lead in 'Needs Research' stage"
+        },
+        {
+          "order": 3,
+          "agent": "AGENT_01",
+          "name": "Full Ethics Gate Evaluation",
+          "action": "Run complete Sidq-Amanah-Adl assessment on enriched lead. Evaluate: Is outreach to this lead truthful? Is the lead likely to benefit genuinely? Is targeting this lead just?",
+          "output": "Ethics Gate Verdict: APPROVED / FLAGGED / REJECTED with reasoning",
+          "ethics_gate": true,
+          "ethics_gate_check": "Full Sidq + Amanah + Adl + Grandfather Principle evaluation",
+          "duration": "15 mins",
+          "human_review": "Required if FLAGGED",
+          "failure_action": "REJECTED: archive lead with reason, no outreach. FLAGGED: hold pending Hasan review."
+        },
+        {
+          "order": 4,
+          "agent": "AGENT_01",
+          "name": "Handoff to Scribe & Keeper",
+          "action": "Send enriched lead card to AGENT_02 for sequence building. Send raw data to AGENT_08 for CRM entry.",
+          "output": "Enriched lead card delivered to AGENT_02. CRM record created by AGENT_08.",
+          "ethics_gate": false,
+          "duration": "Immediate",
+          "human_review": false
+        },
+        {
+          "order": 5,
+          "agent": "AGENT_02",
+          "name": "Outreach Sequence Creation",
+          "action": "Craft personalised 5-step email sequence and 3-step LinkedIn DM sequence based on enriched lead card. Personalisation score must reach 7/10+. No manufactured urgency or false claims.",
+          "output": "Draft outreach sequences (email + LinkedIn) with personalisation notes",
+          "ethics_gate": true,
+          "ethics_gate_check": "Sidq check: every claim in every message is verifiable. No dark patterns. No false urgency.",
+          "duration": "2-4 hrs",
+          "human_review": true,
+          "human_review_note": "Hasan reviews ALL outreach sequences before activation. Non-negotiable.",
+          "failure_action": "Failed Ethics Gate: return to AGENT_02 with specific remediation notes"
+        },
+        {
+          "order": 6,
+          "agent": "AGENT_02",
+          "name": "Outreach Activation",
+          "action": "After Hasan approval, activate sequence in Instantly.ai. Log send dates and sequence IDs to AGENT_08.",
+          "output": "Sequence live in Instantly.ai. CRM updated with outreach start date.",
+          "ethics_gate": false,
+          "duration": "Immediate post-approval",
+          "human_review": false,
+          "prerequisite": "Hasan approval REQUIRED before this step executes"
+        },
+        {
+          "order": 7,
+          "agent": "AGENT_03",
+          "name": "Reply Management & Discovery Call",
+          "action": "Manage replies, handle objections honestly (no pressure tactics), book discovery calls via Calendly. During discovery call: understand business, identify genuine pain, assess fit for audit.",
+          "output": "Discovery call completed. Deal stage updated in CRM. Decision: Proceed to proposal OR Not a fit.",
+          "ethics_gate": false,
+          "duration": "1-14 days (reply dependent)",
+          "human_review": true,
+          "human_review_note": "Discovery call conducted by Hasan. AGENT_03 provides briefing pack and pre-call prep."
+        },
+        {
+          "order": 8,
+          "agent": "AGENT_03",
+          "name": "Audit Proposal",
+          "action": "Based on discovery call, recommend appropriate audit tier (Starter £497 / Growth £897 / Scale £1,497). Issue proposal via PandaDoc. Ethics Gate check on all claims in proposal.",
+          "output": "Proposal issued. Awaiting client signature.",
+          "ethics_gate": true,
+          "ethics_gate_check": "Adl check: is recommended tier genuinely the right fit, or are we upselling unnecessarily? All ROI projections honest and clearly labelled as estimates.",
+          "duration": "24-48 hrs",
+          "human_review": true,
+          "human_review_note": "Hasan signs off on every proposal"
+        },
+        {
+          "order": 9,
+          "agent": "AGENT_03",
+          "name": "Invoice & Onboarding",
+          "action": "Process payment via Stripe. Send onboarding questionnaire. Brief AGENT_04 with full client context.",
+          "output": "Invoice paid. Onboarding pack sent. Audit briefing delivered to AGENT_04.",
+          "ethics_gate": false,
+          "duration": "24 hrs",
+          "human_review": false
+        }
+      ],
+      "success_condition": "Audit invoice paid and AGENT_04 briefed",
+      "failure_recovery": "If lead goes cold after proposal: AGENT_02 sends one honest follow-up (no pressure). If no response after 7 days: archive, do not chase. Retarget via content only.",
+      "kpis": {
+        "lead_to_discovery": "10% conversion",
+        "discovery_to_proposal": "50% conversion",
+        "proposal_to_close": "60% conversion",
+        "overall_lead_to_client": "3% minimum"
+      }
+    },
+    {
+      "id": "WF_02",
+      "name": "Audit Delivery Flow",
+      "description": "The complete audit production and delivery workflow, from briefing through research, report writing, quality review, delivery call, and upsell handoff.",
+      "trigger": "Audit invoice paid and onboarding questionnaire received",
+      "estimated_duration": "5-10 business days (tier dependent)",
+      "phases_active": [1, 2, 3, 4],
+      "steps": [
+        {
+          "order": 1,
+          "agent": "AGENT_04",
+          "name": "Audit Briefing & Scope Confirmation",
+          "action": "Review onboarding questionnaire, confirm scope with client, access granted to analytics platforms. Produce audit workplan with milestones.",
+          "output": "Audit workplan signed off by Hasan and client",
+          "ethics_gate": false,
+          "duration": "1 business day",
+          "human_review": true,
+          "human_review_note": "Hasan confirms scope is achievable within timeframe and pricing"
+        },
+        {
+          "order": 2,
+          "agent": "AGENT_04",
+          "name": "Data Collection & Analysis",
+          "action": "Extract data from GA4, Search Console, LinkedIn Analytics, Meta, Ahrefs/SEMrush. Analyse digital presence, SEO health, content performance, ad performance, funnel metrics, competitor positioning.",
+          "output": "Raw analysis data package (all sources documented)",
+          "ethics_gate": false,
+          "duration": "2-4 business days",
+          "human_review": false
+        },
+        {
+          "order": 3,
+          "agent": "AGENT_04",
+          "name": "Content Gap Identification",
+          "action": "Identify content gaps, keyword opportunities, and messaging inconsistencies. Share findings with AGENT_05 for editorial context.",
+          "output": "Content gap report (shared with AGENT_05)",
+          "ethics_gate": false,
+          "duration": "1 business day",
+          "human_review": false
+        },
+        {
+          "order": 4,
+          "agent": "AGENT_04",
+          "name": "Audit Report Production",
+          "action": "Produce full audit report to agreed tier specifications. Minimum 3 high-impact opportunities. All recommendations achievable. All projections labelled as estimates with assumptions stated.",
+          "output": "Draft audit report (PDF + optional slide deck for Scale tier)",
+          "ethics_gate": true,
+          "ethics_gate_check": "Full Sidq + Amanah + Adl check: Are all claims true? Are all recommendations genuinely achievable? Are all projections clearly labelled? Does the report over-promise anywhere?",
+          "duration": "1-2 business days",
+          "human_review": true,
+          "human_review_note": "Hasan reviews and approves every audit report before client delivery. Non-negotiable."
+        },
+        {
+          "order": 5,
+          "agent": "AGENT_04",
+          "name": "Delivery Call Preparation",
+          "action": "Prepare delivery call agenda, identify key talking points, anticipate client questions. For Scale tier: prepare 60-90 min presentation deck.",
+          "output": "Delivery call pack ready",
+          "ethics_gate": false,
+          "duration": "2-4 hrs",
+          "human_review": false
+        },
+        {
+          "order": 6,
+          "agent": "AGENT_04",
+          "name": "Audit Delivery Call",
+          "action": "Conduct delivery call with client. Walk through findings. Answer questions. Plant seeds for next-tier engagement naturally (not sales-led).",
+          "output": "Client received audit. Call notes captured. NPS score collected.",
+          "ethics_gate": false,
+          "duration": "30-90 mins (tier dependent)",
+          "human_review": true,
+          "human_review_note": "Hasan leads all delivery calls"
+        },
+        {
+          "order": 7,
+          "agent": "AGENT_04",
+          "name": "Post-Audit Handoff",
+          "action": "Send AGENT_07 full audit pack, NPS score, call notes, and upsell readiness assessment. Update AGENT_08 with delivery confirmation.",
+          "output": "AGENT_07 briefed on client status. AGENT_08 updated. Client satisfaction logged.",
+          "ethics_gate": false,
+          "duration": "Same day as delivery call",
+          "human_review": false
+        },
+        {
+          "order": 8,
+          "agent": "AGENT_07",
+          "name": "Post-Audit Nurture & Upsell Assessment",
+          "action": "7-day post-audit check-in. Assess whether client has implemented quick wins. If client demonstrating value from audit, raise Sprint conversation naturally. Route to WF_04 (Upsell Flow) if ready.",
+          "output": "Client health score. Upsell readiness flag.",
+          "ethics_gate": true,
+          "ethics_gate_check": "Amanah check: Has the client actually received value from the audit before a Sprint is proposed? Retainers Are Earned, Not Sold.",
+          "duration": "7-14 days",
+          "human_review": false
+        }
+      ],
+      "success_condition": "Audit delivered, client NPS 8+, upsell conversation opened where appropriate",
+      "failure_recovery": "If client NPS below 7: immediate escalation to Hasan. Remediation plan within 24hrs. Offer additional call at no charge. Never push upsell to a dissatisfied client."
+    },
+    {
+      "id": "WF_03",
+      "name": "Content Flow",
+      "description": "Weekly content production cycle for Numu's LinkedIn presence, email newsletter, and thought leadership assets.",
+      "trigger": "Monday morning content planning session (recurring weekly trigger)",
+      "estimated_duration": "7 days (weekly cycle)",
+      "phases_active": [1, 2, 3, 4],
+      "steps": [
+        {
+          "order": 1,
+          "agent": "AGENT_09",
+          "name": "Performance Review & Content Brief",
+          "action": "Review previous week's content performance. Identify top-performing topics, engagement patterns, and audience questions. Generate content intelligence brief for AGENT_05.",
+          "output": "Weekly content intelligence brief (what worked, what to do more of, audience questions to answer)",
+          "ethics_gate": false,
+          "duration": "2 hrs (Monday morning)",
+          "human_review": false
+        },
+        {
+          "order": 2,
+          "agent": "AGENT_05",
+          "name": "Content Calendar Planning",
+          "action": "Plan week's content: 4 LinkedIn posts, 1 newsletter, 1 thought leadership piece. Topics aligned to content pillars. Mix of educational, inspirational, case study, and commentary.",
+          "output": "Weekly content calendar (titles, angles, formats, scheduled publish dates)",
+          "ethics_gate": false,
+          "duration": "2 hrs (Monday)",
+          "human_review": true,
+          "human_review_note": "Hasan approves content calendar before production begins"
+        },
+        {
+          "order": 3,
+          "agent": "AGENT_05",
+          "name": "Content Production",
+          "action": "Draft all content: LinkedIn posts (500-1500 words), newsletter (800-1500 words), thought leadership piece (1500-2500 words). All content written in Hasan's voice: warm, direct, knowledgeable, rooted in Islamic principles.",
+          "output": "Full week's content drafts",
+          "ethics_gate": true,
+          "ethics_gate_check": "Sidq check: all statistics verified, all claims substantiated, no exaggeration of Numu results or capabilities",
+          "duration": "2-3 days (Mon-Wed)",
+          "human_review": true,
+          "human_review_note": "Hasan reads and approves every piece of content before scheduling. Non-negotiable."
+        },
+        {
+          "order": 4,
+          "agent": "AGENT_05",
+          "name": "Content Scheduling",
+          "action": "Schedule approved content in Buffer/Hootsuite for optimal send times. Load newsletter into Beehiiv. Tag all content in CRM for attribution tracking.",
+          "output": "All content scheduled and live",
+          "ethics_gate": false,
+          "duration": "2 hrs (Wednesday-Thursday)",
+          "human_review": false,
+          "prerequisite": "Hasan approval required before scheduling"
+        },
+        {
+          "order": 5,
+          "agent": "AGENT_05",
+          "name": "Engagement Management",
+          "action": "Monitor comments, replies, and DMs generated by content. Respond to genuine engagement. Flag inbound leads to AGENT_01 for enrichment. Send performance data to AGENT_06 for amplification decisions.",
+          "output": "Engagement log. Inbound leads flagged to AGENT_01. Amplification candidates flagged to AGENT_06.",
+          "ethics_gate": false,
+          "duration": "Ongoing throughout week",
+          "human_review": true,
+          "human_review_note": "All replies in Hasan's name drafted for his review before sending"
+        },
+        {
+          "order": 6,
+          "agent": "AGENT_09",
+          "name": "Week-End Performance Capture",
+          "action": "Capture all content metrics: reach, engagement rate, clicks, follower growth, inbound leads attributed. Feed into weekly dashboard.",
+          "output": "Content performance data added to weekly dashboard",
+          "ethics_gate": false,
+          "duration": "1 hr (Friday)",
+          "human_review": false
+        }
+      ],
+      "success_condition": "4 LinkedIn posts published, 1 newsletter sent, performance captured, minimum 1 inbound lead attributed",
+      "failure_recovery": "If content misses publishing window due to Ethics Gate failure: do not publish. Better to miss a day than publish something misleading. Hasan notified immediately."
+    },
+    {
+      "id": "WF_04",
+      "name": "Upsell Flow",
+      "description": "The structured pathway for moving clients from Audit to Sprint to Retainer to Founder's Circle. The Ladder principle: every rung must be earned through demonstrated value.",
+      "trigger": "AGENT_07 raises upsell-ready flag after client has demonstrated value extraction from current engagement",
+      "estimated_duration": "7-30 days depending on client readiness",
+      "phases_active": [1, 2, 3, 4],
+      "non_negotiable": "No upsell conversation begins until AGENT_07 confirms value has been received and Ethics Gate confirms upsell is genuinely in client's interest",
+      "steps": [
+        {
+          "order": 1,
+          "agent": "AGENT_07",
+          "name": "Value Validation Check",
+          "action": "Assess whether client has genuinely extracted value from current engagement. Review: NPS score, implementation of recommendations, client's own stated results. If value NOT demonstrated: do not proceed.",
+          "output": "Value validation: YES or NO",
+          "ethics_gate": true,
+          "ethics_gate_check": "Amanah + Retainers-Are-Earned check: Has the client actually benefited? Would this upsell genuinely serve them?",
+          "duration": "1 business day",
+          "human_review": true,
+          "human_review_note": "Hasan makes final call on upsell readiness"
+        },
+        {
+          "order": 2,
+          "agent": "AGENT_07",
+          "name": "Natural Upsell Opening",
+          "action": "In the context of check-in call or email, mention the next service tier naturally as a logical next step — not a sales pitch. Frame as: 'Given the results you're seeing from the audit, the Sprint would help you implement the top 3 recommendations in 90 days. Worth a conversation?'",
+          "output": "Client response: interested / not now / not interested",
+          "ethics_gate": false,
+          "duration": "Check-in call or email",
+          "human_review": true,
+          "human_review_note": "All upsell conversations led by Hasan personally"
+        },
+        {
+          "order": 3,
+          "agent": "AGENT_03",
+          "name": "Upsell Discovery Call",
+          "action": "If client interested: book dedicated call to explore next engagement. Understand client's goals for next 90 days. Confirm fit for Sprint / Retainer. Grandfather Principle: all pricing honoured.",
+          "output": "Call notes. Upsell proposal decision: proceed or not.",
+          "ethics_gate": true,
+          "ethics_gate_check": "Grandfather Principle check: existing client pricing honoured. Adl check: is recommended tier genuinely right for this client's stage?",
+          "duration": "30-45 min call",
+          "human_review": true,
+          "human_review_note": "Hasan leads call"
+        },
+        {
+          "order": 4,
+          "agent": "AGENT_03",
+          "name": "Upsell Proposal",
+          "action": "Issue proposal for Sprint (£1,200) or Retainer (£700-£5,000/mo) or Founder's Circle (£2,200). Proposal must clearly articulate what is included, what outcomes are targeted (as goals, not guarantees), and payment terms.",
+          "output": "Proposal issued via PandaDoc",
+          "ethics_gate": true,
+          "ethics_gate_check": "Sidq check: all claims in proposal are honest. Outcomes framed as targets, not guarantees. No pressure language.",
+          "duration": "24-48 hrs",
+          "human_review": true,
+          "human_review_note": "Hasan signs off on every upsell proposal"
+        },
+        {
+          "order": 5,
+          "agent": "AGENT_03",
+          "name": "Close & Onboard",
+          "action": "Process payment. Send welcome pack for new engagement tier. Brief relevant agents (AGENT_04 for Sprint, AGENT_07 for Retainer onboarding). Update CRM.",
+          "output": "New engagement live. Client onboarded. Agents briefed.",
+          "ethics_gate": false,
+          "duration": "24 hrs",
+          "human_review": false
+        }
+      ],
+      "success_condition": "Client moves to next tier with full informed consent and genuine enthusiasm",
+      "failure_recovery": "If client says not now: respect it completely. Set a 60-day review reminder. Never follow up more than once per month. If client says not interested: close upsell track, maintain relationship as audit-only client."
+    },
+    {
+      "id": "WF_05",
+      "name": "Campaign Flow",
+      "description": "End-to-end workflow for client marketing campaign delivery — from brief intake through strategy, creative production, launch, optimisation, and reporting.",
+      "trigger": "Client requests campaign service (paid ads, email campaign, or integrated campaign)",
+      "estimated_duration": "5-7 days setup, then ongoing management",
+      "phases_active": [2, 3, 4],
+      "steps": [
+        {
+          "order": 1,
+          "agent": "AGENT_11",
+          "name": "Campaign Brief Intake",
+          "action": "Receive campaign brief from client (via AGENT_03 or AGENT_07). Clarify objectives, budget, timeline, audience, KPIs. Conduct preliminary ethics review of campaign objectives.",
+          "output": "Validated campaign brief document",
+          "ethics_gate": true,
+          "ethics_gate_check": "Sidq check: can this campaign's objectives be achieved honestly? Are the client's claims about their products/services true?",
+          "duration": "1-2 business days",
+          "human_review": true,
+          "human_review_note": "Hasan approves campaign brief before strategy work begins"
+        },
+        {
+          "order": 2,
+          "agent": "AGENT_11",
+          "name": "Campaign Strategy Development",
+          "action": "Build full-funnel strategy: target audience definition, channel selection, budget allocation, creative direction, messaging framework, KPI targets, measurement plan.",
+          "output": "Campaign strategy deck (presented to client for approval)",
+          "ethics_gate": true,
+          "ethics_gate_check": "Adl check: are targeting parameters fair and non-exploitative? Amanah check: are KPI targets realistic and honest?",
+          "duration": "2-3 business days",
+          "human_review": true,
+          "human_review_note": "Client approves strategy before any spend or creative production"
+        },
+        {
+          "order": 3,
+          "agent": "AGENT_05",
+          "name": "Creative & Copy Production",
+          "action": "Produce all campaign creatives: ad copy, visuals, landing page copy. All aligned to approved strategy and Ethics Gate principles.",
+          "output": "Creative pack (copy + design briefs for all ad formats)",
+          "ethics_gate": true,
+          "ethics_gate_check": "Sidq check: all ad claims are true and verifiable. No misleading before/after, no fake urgency, no false social proof.",
+          "duration": "2-3 business days",
+          "human_review": true,
+          "human_review_note": "Client approves all creative before launch"
+        },
+        {
+          "order": 4,
+          "agent": "AGENT_12",
+          "name": "Landing Page Build (if required)",
+          "action": "Build or optimise landing page for campaign. Integrate Calendly, Stripe, or lead form as appropriate. Set up conversion tracking.",
+          "output": "Live landing page with conversion tracking",
+          "ethics_gate": true,
+          "ethics_gate_check": "Full Sidq check on all page claims and CTAs. No dark patterns.",
+          "duration": "2-3 business days",
+          "human_review": true,
+          "human_review_note": "Hasan reviews page before going live"
+        },
+        {
+          "order": 5,
+          "agent": "AGENT_06",
+          "name": "Campaign Launch & Initial Optimisation",
+          "action": "Launch campaigns in LinkedIn Campaign Manager / Meta Ads Manager. Monitor first 48hrs closely. Make initial bid and audience adjustments. No changes to creative or claims without client approval.",
+          "output": "Campaign live. First 48hr performance report.",
+          "ethics_gate": false,
+          "duration": "48 hrs post-launch",
+          "human_review": false
+        },
+        {
+          "order": 6,
+          "agent": "AGENT_06",
+          "name": "Ongoing Optimisation",
+          "action": "Weekly optimisation cycle: review performance against KPIs, adjust bids, audiences, creative rotation. Flag underperformance to AGENT_09 and Hasan immediately.",
+          "output": "Weekly optimisation report",
+          "ethics_gate": false,
+          "duration": "Ongoing (weekly cycle)",
+          "human_review": false
+        },
+        {
+          "order": 7,
+          "agent": "AGENT_09",
+          "name": "Campaign Reporting",
+          "action": "Produce weekly and end-of-campaign reports. All metrics honest — show wins AND losses. Provide clear recommendations for next campaign based on learnings.",
+          "output": "Weekly report (sent to client) + end-of-campaign post-mortem",
+          "ethics_gate": true,
+          "ethics_gate_check": "Adl check: all reported metrics are accurate. Underperformance is surfaced and explained, not buried.",
+          "duration": "Weekly + end-of-campaign",
+          "human_review": true,
+          "human_review_note": "Hasan reviews all client-facing reports before delivery"
+        }
+      ],
+      "success_condition": "Campaign KPIs met or exceeded. Client receives honest performance report. Campaign extended or next campaign commissioned.",
+      "failure_recovery": "If campaign significantly underperforming (>30% below KPI after 2 weeks): immediate client call to discuss. Do not continue spending against a failing strategy. Offer pause-and-replan. Honesty over optics."
+    },
+    {
+      "id": "WF_06",
+      "name": "Automation Flow",
+      "description": "Design, build, test, and deploy marketing automation sequences and system integrations for Numu or client accounts.",
+      "trigger": "Automation requirement identified (by Hasan, AGENT_03, AGENT_07, or client request)",
+      "estimated_duration": "3-10 business days depending on complexity",
+      "phases_active": [1, 2, 3, 4],
+      "steps": [
+        {
+          "order": 1,
+          "agent": "AGENT_10",
+          "name": "Automation Requirements Brief",
+          "action": "Document full automation requirements: trigger conditions, action steps, data inputs/outputs, tools involved, manual override points. Map against ethics framework: does any step require human oversight?",
+          "output": "Automation brief document",
+          "ethics_gate": true,
+          "ethics_gate_check": "Amanah check: does any proposed automation act in Hasan's name without his knowledge? Does it send communications, create content, or take commercial action without human approval?",
+          "duration": "1 business day",
+          "human_review": true,
+          "human_review_note": "Hasan must approve automation brief before any build begins. Golden Rule: no automation may represent Hasan or contact clients/prospects without explicit prior approval."
+        },
+        {
+          "order": 2,
+          "agent": "AGENT_10",
+          "name": "Automation Architecture Design",
+          "action": "Design the automation in Make or Zapier: map all triggers, conditions, actions, branches, and error handlers. Document every step in Notion. Build manual override capability into every automation.",
+          "output": "Automation architecture diagram + Notion documentation",
+          "ethics_gate": false,
+          "duration": "1-2 business days",
+          "human_review": false
+        },
+        {
+          "order": 3,
+          "agent": "AGENT_10",
+          "name": "Build & Internal Test",
+          "action": "Build automation in Make/Zapier/HubSpot. Run with test data. Verify all branches work correctly. Test manual override. Test error handling.",
+          "output": "Tested automation (passed all internal test cases)",
+          "ethics_gate": false,
+          "duration": "1-3 business days",
+          "human_review": false
+        },
+        {
+          "order": 4,
+          "agent": "AGENT_10",
+          "name": "Hasan Review & Sign-Off",
+          "action": "Demo automation to Hasan (Loom recording or live walkthrough). Confirm Hasan understands what it does, when it runs, and how to override/pause it.",
+          "output": "Hasan sign-off recorded in Notion",
+          "ethics_gate": false,
+          "duration": "1 business day",
+          "human_review": true,
+          "human_review_note": "Non-negotiable. Hasan must explicitly sign off before any automation goes live."
+        },
+        {
+          "order": 5,
+          "agent": "AGENT_10",
+          "name": "Live Deployment & Monitoring",
+          "action": "Deploy automation to production. Monitor first 48hrs closely. Log all runs in AGENT_08 (CRM). Alert Hasan if any anomalous behaviour detected.",
+          "output": "Automation live and logged",
+          "ethics_gate": false,
+          "duration": "Ongoing",
+          "human_review": false
+        }
+      ],
+      "success_condition": "Automation running correctly, documented, with manual override, and Hasan has full visibility",
+      "failure_recovery": "Any automation error with client-facing impact: pause immediately, notify Hasan and affected clients, investigate root cause before reactivation."
+    },
+    {
+      "id": "WF_07",
+      "name": "Growth Flow",
+      "description": "Monthly and quarterly strategic growth review — pulling together intelligence from all agents to assess Numu's growth trajectory and make strategic decisions for the next period.",
+      "trigger": "First Monday of each month (monthly) + First Monday of each quarter (quarterly extended version)",
+      "estimated_duration": "2-3 days (monthly) / 5 days (quarterly)",
+      "phases_active": [1, 2, 3, 4],
+      "steps": [
+        {
+          "order": 1,
+          "agent": "AGENT_09",
+          "name": "Monthly Performance Compilation",
+          "action": "Pull all data: revenue vs target, pipeline health, content performance, campaign ROI, client NPS, lead volume. Compile into board pack format.",
+          "output": "Draft monthly board pack",
+          "ethics_gate": false,
+          "duration": "1 business day",
+          "human_review": false
+        },
+        {
+          "order": 2,
+          "agent": "AGENT_15",
+          "name": "Revenue Forecast Update",
+          "action": "Update 3-scenario revenue model (conservative/base/optimistic). Track against £132K-£171K Year 1 target. Identify whether trajectory is on track. Surface any revenue concentration risks.",
+          "output": "Updated revenue forecast with variance analysis",
+          "ethics_gate": false,
+          "duration": "1 business day",
+          "human_review": false,
+          "phases_active_step": [3, 4],
+          "phase_1_2_substitute": "Hasan performs basic revenue tracking in Google Sheets"
+        },
+        {
+          "order": 3,
+          "agent": "AGENT_07",
+          "name": "Client Portfolio Review",
+          "action": "Review all active clients: health scores, upcoming renewals, upsell opportunities, churn risks. Produce client portfolio summary.",
+          "output": "Client portfolio health report",
+          "ethics_gate": false,
+          "duration": "Half day",
+          "human_review": false
+        },
+        {
+          "order": 4,
+          "agent": "AGENT_13",
+          "name": "Ethics Audit (Quarterly)",
+          "action": "Quarterly: conduct full ethics audit of all agent outputs from the past quarter. Review any Ethics Gate flags and resolutions. Identify any patterns of drift. Update ethics training.",
+          "output": "Ethics audit report (quarterly)",
+          "ethics_gate": false,
+          "duration": "1 business day",
+          "human_review": true,
+          "human_review_note": "Hasan reviews ethics audit report personally",
+          "phases_active_step": [3, 4],
+          "frequency": "Quarterly only"
+        },
+        {
+          "order": 5,
+          "agent": "AGENT_09",
+          "name": "Integrated Growth Review Pack",
+          "action": "Compile all inputs into final growth review pack: performance, forecast, client portfolio, ethics audit. Prepare for Hasan's strategic review session.",
+          "output": "Final growth review pack (Notion + PDF)",
+          "ethics_gate": true,
+          "ethics_gate_check": "Adl check: all metrics presented honestly. No selective reporting. Losses as prominent as wins.",
+          "duration": "Half day",
+          "human_review": false
+        },
+        {
+          "order": 6,
+          "agent": "AGENT_09",
+          "name": "Hasan Strategic Review Session",
+          "action": "Hasan reviews full pack. Makes strategic decisions for next period: which agents to activate, which services to push, where to invest content, any pricing or positioning changes.",
+          "output": "Strategic decisions logged in Notion. Agent activation decisions communicated to relevant agents.",
+          "ethics_gate": false,
+          "duration": "2-4 hrs (Hasan-led)",
+          "human_review": true,
+          "human_review_note": "This step IS the human review — Hasan's decisions feed back into the system for the next cycle"
+        }
+      ],
+      "success_condition": "Hasan has clear picture of business health and makes informed decisions for next period. All decisions logged. Agents briefed on any changes.",
+      "failure_recovery": "If data for growth review is incomplete: delay review by maximum 48hrs to gather missing data. Never conduct strategic review on incomplete information."
+    }
+  ]
+}
