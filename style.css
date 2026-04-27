@@ -1790,3 +1790,21 @@ img { display: block; max-width: 100%; }
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
+
+
+/* ── 5-Question Ethics Gate Pillar — Question Text ── */
+.pillar-q {
+  font-size: 11px;
+  color: rgba(255,255,255,0.55);
+  font-style: italic;
+  margin-top: 6px;
+  line-height: 1.4;
+  max-width: 180px;
+  text-align: center;
+}
+.ethics-pillars {
+  grid-template-columns: repeat(5, 1fr);
+}
+@media (max-width: 900px) {
+  .ethics-pillars { grid-template-columns: repeat(2, 1fr); }
+}

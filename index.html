@@ -87,7 +87,7 @@
       <div class="kpi-row">
         <div class="kpi-card anim-card" style="--i:0; --kpi-color: var(--green)">
           <div class="kpi-label">Active Agents</div>
-          <div class="kpi-value"><span id="kpi-active-value">0</span><span class="kpi-dim"> / 15</span></div>
+          <div class="kpi-value"><span id="kpi-active-value">0</span><span class="kpi-dim"> / 18</span></div>
           <div class="kpi-sub">Phase 1 deployment</div>
           <div class="kpi-bar"><div class="kpi-bar-fill" style="--fill: 66.7%; background: linear-gradient(90deg, var(--green), #059669)"></div></div>
         </div>
@@ -96,7 +96,7 @@
           <div class="kpi-value kpi-value-sm" style="color: var(--green)">ACTIVE</div>
           <div class="kpi-status-row">
             <span class="status-dot green"></span>
-            <span>All 4 pillars enforced</span>
+            <span>All 5 questions enforced</span>
           </div>
         </div>
         <div class="kpi-card anim-card" style="--i:2; --kpi-color: var(--blue)">
@@ -107,7 +107,7 @@
         </div>
         <div class="kpi-card anim-card" style="--i:3; --kpi-color: var(--amber)">
           <div class="kpi-label">Year 1 Revenue Target</div>
-          <div class="kpi-value kpi-value-sm">£132K<span class="kpi-dim"> – £171K</span></div>
+          <div class="kpi-value kpi-value-sm">£30K<span class="kpi-dim"> → £60K → £100K+</span></div>
           <div class="kpi-sub">4 revenue phases active</div>
           <div class="kpi-bar"><div class="kpi-bar-fill" style="--fill: 25%; background: linear-gradient(90deg, var(--amber), #D97706)"></div></div>
         </div>
@@ -115,7 +115,7 @@
 
       <!-- Agent Fleet Grid -->
       <h2 class="section-title">Agent Fleet</h2>
-      <p class="section-desc">All 15 agents — click any agent to view detailed profile</p>
+      <p class="section-desc">All 18 agents — click any agent to view detailed profile</p>
       <div id="agent-mini-grid" class="agent-grid-mini"></div>
 
       <!-- Ethics Gate Protocol -->
@@ -123,32 +123,43 @@
       <div class="ethics-section">
         <div class="ethics-pillars">
           <div class="pillar">
-            <div class="pillar-icon green">S</div>
+            <div class="pillar-icon green">1</div>
             <div class="pillar-name">Sidq</div>
             <div class="pillar-arabic">صِدْق</div>
             <div class="pillar-meaning">Truthfulness</div>
+            <div class="pillar-q">"Is every claim literally true?"</div>
           </div>
           <div class="pillar">
-            <div class="pillar-icon green">A</div>
+            <div class="pillar-icon green">2</div>
             <div class="pillar-name">Amanah</div>
             <div class="pillar-arabic">أَمَانَة</div>
             <div class="pillar-meaning">Trustworthiness</div>
+            <div class="pillar-q">"Would I recommend this to my own family?"</div>
           </div>
           <div class="pillar">
-            <div class="pillar-icon green">J</div>
+            <div class="pillar-icon green">3</div>
             <div class="pillar-name">'Adl</div>
             <div class="pillar-arabic">عَدْل</div>
             <div class="pillar-meaning">Justice</div>
+            <div class="pillar-q">"Is this fair to all parties?"</div>
           </div>
           <div class="pillar">
-            <div class="pillar-icon green">G</div>
+            <div class="pillar-icon green">4</div>
             <div class="pillar-name">Grandfather</div>
             <div class="pillar-arabic"></div>
-            <div class="pillar-meaning">Loyalty Rewarded</div>
+            <div class="pillar-meaning">Dignity & Pride</div>
+            <div class="pillar-q">"Would I be proud to show this to my grandfather?"</div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon green">5</div>
+            <div class="pillar-name">Akhirah Lens</div>
+            <div class="pillar-arabic">آخِرَة</div>
+            <div class="pillar-meaning">Accountability</div>
+            <div class="pillar-q">"Will this stand before Allah?"</div>
           </div>
         </div>
         <div class="ethics-status">
-          <span class="badge badge-green badge-lg"><span class="badge-dot"></span> All Ethics Pillars Active</span>
+          <span class="badge badge-green badge-lg"><span class="badge-dot"></span> 5-Question Ethics Gate Active</span>
           <span class="ethics-label">Operator: Hasan Sarwar · AGENT_06 THE ETHICS GUARDIAN (all phases)</span>
         </div>
       </div>
@@ -186,7 +197,7 @@
             <div class="revenue-target">£100K+ ARR</div>
           </div>
           <div class="revenue-bar"><div class="revenue-bar-fill" style="--fill: 0%; --color: var(--amber)"></div></div>
-          <div class="revenue-note">All 15 agents operational · 8-12 retainers · 8-12 Founder's Circle members</div>
+          <div class="revenue-note">All 18 agents operational · 8-12 retainers · 8-12 Founder's Circle members</div>
         </div>
       </div>
 
@@ -196,12 +207,12 @@
     <section id="tab-agents" class="tab-panel" role="tabpanel">
       
       <h2 class="section-title" style="margin-top:0">Agent Explorer</h2>
-      <p class="section-desc">All 15 agents with full metadata — filter, search, and click to expand</p>
+      <p class="section-desc">All 18 agents with full metadata — filter, search, and click to expand</p>
       
       <div class="agents-toolbar">
         <input type="text" id="agent-search" class="search-box" placeholder="Search agents..." aria-label="Search agents">
         <div class="filter-group">
-          <button class="filter-btn active" data-filter="all">All (15)</button>
+          <button class="filter-btn active" data-filter="all">All (18)</button>
           <button class="filter-btn" data-filter="active">Active</button>
           <button class="filter-btn" data-filter="standby">Standby</button>
         </div>
@@ -262,7 +273,7 @@
     <section id="tab-playbook" class="tab-panel" role="tabpanel">
       
       <h2 class="section-title" style="margin-top:0">Agent Quick Reference</h2>
-      <p class="section-desc">All 15 agents in one sortable table — click column headers to sort</p>
+      <p class="section-desc">All 18 agents in one sortable table — click column headers to sort</p>
       
       <div class="playbook-table-wrap">
         <table class="playbook-table sortable-table">
