@@ -710,7 +710,7 @@ function renderSchedule() {
       <div class="phase-name">${phase.label}</div>
       <div class="phase-months">${phase.months}</div>
       <div class="phase-focus">${phase.focus}</div>
-      <div class="phase-agents-label">Agents (${phase.active.length}/15)</div>
+      <div class="phase-agents-label">Agents (${phase.active.length}/18)</div>
       <div class="phase-agents-list">${agentDots}</div>
       <div class="phase-target">Target: ${phase.target}</div>
     `;
